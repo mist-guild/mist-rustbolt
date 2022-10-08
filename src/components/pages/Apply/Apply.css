@@ -1,0 +1,67 @@
+.apply-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form-label{
+  /* background: -webkit-linear-gradient(90deg, rgba(255,255,255,1) 5%, rgba(98,200,232,1) 39%, rgba(255,255,255,1) 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  color: white;
+  font-family: "Poppins";
+  display: inline-block;
+  margin-bottom: 30px;
+}
+.form-control:focus, .form-control:active{
+  background-color: #223261;
+  color: #62C8E8;
+}
+.btn-primary{
+  width: 250px !important;
+  text-transform: uppercase;
+  cursor: pointer !important;
+}
+.form-select{
+  cursor: default !important;
+}
+@media screen and (max-width: 768px){
+  .apply-form{
+    width: 100% !important;
+  }
+  .form-label{
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .form-control{
+    font-size: 12px;
+  }
+}
+.form-control, .form-select, .btn-primary{
+  position: relative;
+  width: 100%;
+  margin: 0 0 50px;
+  padding: 24px 33px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: inherit;
+  line-height: calc(63px - (48px - 2px));
+  clip-path: polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px));
+  color: white;
+  border: 1px solid #62C8E8;
+  background-color: #223261;
+  border-radius: 0;
+  outline: 0;
+  cursor: text;
+  /* -webkit-appearance: none; */
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: border-color .2s ease-in-out;
+  -o-transition: border-color .2s ease-in-out;
+  transition: border-color .2s ease-in-out;
+  -webkit-filter: drop-shadow(0 3px 7px rgba(14, 8, 18, .44));
+  filter: drop-shadow(0 3px 7px rgba(14, 8, 18, .44));
+}
+.form-group{
+  width: 80%;
+}
