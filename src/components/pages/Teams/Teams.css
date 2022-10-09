@@ -120,6 +120,17 @@ body{
     padding: 5px;
   }
 }
+@media screen and (max-width: 576px){
+  .card2 .inner-card{
+    margin: 0px auto;
+  }
+}
+
+@media screen and (min-width: 1700px){
+  .card2 .inner-card{
+    margin: 0px auto;
+  }
+}
 
 .castle-cards-wrapper{
   display: contents;
@@ -165,7 +176,7 @@ body{
 }
 
 .clash-card__image--barbarian {
-  /* background-image: url(https://wow.zamimg.com/uploads/guide/seo/10246.jpg?1588896674) ; */
+  background-image: url(https://i.ibb.co/wCR7NmS/logo.png) , linear-gradient(to right, rgba(98, 200, 232, 0.5) , rgba(34, 50, 97, 0.3)) ;
   background-repeat: no-repeat;
   background-size: cover ;
   background-position: center, center;

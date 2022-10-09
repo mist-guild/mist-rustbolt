@@ -170,7 +170,6 @@
         box-sizing: border-box;
         overflow: hidden;
         display: block;
-        margin: 0px auto;
         transform: rotateX(0deg) rotateY(0deg) scale(1);
         top: 0;
         height: 100%;
