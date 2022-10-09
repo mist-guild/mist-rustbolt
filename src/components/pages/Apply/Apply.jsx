@@ -118,7 +118,7 @@ export default ({ data = [] }) => {
             <Layout col="1">
               <section className="apply" id="apply" style={{height:'fit-content', flexDirection:'column', padding:'100px 0px'}} ref={scrollToref}>
                 {/* <h1 style={{textAlign:'center'}}> Apply Now</h1> */}
-                <Form action="https://mistguild.pythonanywhere.com" method="POST" className="apply-form" style={{width:'80%', fontSize:'max(2vw, 36px)'}}>
+                <Form action="https://mistguild.pythonanywhere.com/applicant" method="POST" className="apply-form" style={{width:'80%', fontSize:'max(2vw, 36px)'}}>
                   <Form.Group className="form-group mb-3">
                     <Form.Label>Character Name</Form.Label>
                     <Form.Control name="character_name" type="text" />

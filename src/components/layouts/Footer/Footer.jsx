@@ -36,7 +36,7 @@ export default () => {
               hoverStyle={{ color: '#62C8E8' }}
             >
               <i className="las la-angle-right" />
-              Team Wind Bridge
+              Team Windbridge
             </Link>
             <Link
               url={"/teams/clear-comms"}

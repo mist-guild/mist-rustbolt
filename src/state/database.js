@@ -48,15 +48,6 @@ const database = {
       title: "Mist - Illidan",
       user_id: "2",
     },
-    {
-      category_id: 2,
-      featured: true,
-      id: "post_1",
-      image: 'https://wallpapercave.com/wp/wp10407651.jpg',
-      short: "WE WANT RAIDERS WHO WANT TO IMPROVE THEIR PLAY, IMPROVE THE RAID TEAM, AND IMPROVE THE CULTURE WE FOSTER HERE.",
-      title: "OUR GUILD PRIDES ITSELF ON ALWAYS IMPROVING. ",
-      user_id: "1",
-    },
   ],
   requirements: [
     {

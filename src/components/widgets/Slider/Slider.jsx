@@ -28,7 +28,7 @@ export default ({ data = [] }) => {
       >
         <div className={styles.slide}>
           <i
-            className={"las la-long-arrow-alt-left"}
+            // className={"hidden las la-long-arrow-alt-left"}
             onClick={() => sliderRef.slickPrev()}
           />
 
@@ -40,7 +40,7 @@ export default ({ data = [] }) => {
             </Button>
           </div>
           <i
-            className={"las la-long-arrow-alt-right"}
+            // className={"las la-long-arrow-alt-right"}
             onClick={() => sliderRef.slickNext()}
           />
         </div>
