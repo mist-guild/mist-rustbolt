@@ -118,30 +118,30 @@ export default ({ data = [] }) => {
             <Layout col="1">
               <section className="apply" id="apply" style={{height:'fit-content', flexDirection:'column', padding:'100px 0px'}} ref={scrollToref}>
                 {/* <h1 style={{textAlign:'center'}}> Apply Now</h1> */}
-                <Form className="apply-form" style={{width:'80%', fontSize:'max(2vw, 36px)'}}>
+                <Form action="https://mistguild.pythonanywhere.com" method="POST" className="apply-form" style={{width:'80%', fontSize:'max(2vw, 36px)'}}>
                   <Form.Group className="form-group mb-3">
                     <Form.Label>Character Name</Form.Label>
-                    <Form.Control type="text" />
+                    <Form.Control name="character_name" type="text" />
                   </Form.Group>
                   <Form.Group className="form-group mb-3">
                     <Form.Label>Discord Contact</Form.Label>
-                    <Form.Control type="text"/>
+                    <Form.Control name="discord_contact" type="text"/>
                   </Form.Group>
                   <Form.Group className="form-group mb-3">
                     <Form.Label>Battlenet Id</Form.Label>
-                    <Form.Control type="text" />
+                    <Form.Control name="battlenet_contact" type="text" />
                   </Form.Group>
                   <Form.Group className="form-group mb-3">
                     <Form.Label>Armory Link</Form.Label>
-                    <Form.Control type="url" />
+                    <Form.Control name="armory_link" type="url" />
                   </Form.Group>
                   <Form.Group className="form-group mb-3">
                     <Form.Label>Age</Form.Label>
-                    <Form.Control type="number" />
+                    <Form.Control name="age" type="number" />
                   </Form.Group>
                   <Form.Group className="form-group mb-3">
                     <Form.Label>Class</Form.Label>
-                    <Form.Select aria-label="Default select example">
+                    <Form.Select name="wow_class" aria-label="Default select example">
                       <option value="Warrior">Warrior</option>
                       <option value="Hunter">Hunter</option>
                       <option value="Mage">Mage</option>
@@ -159,38 +159,38 @@ export default ({ data = [] }) => {
                   </Form.Group>
                   <Form.Group className="form-group mb-3">
                     <Form.Label>What Raid Team Are You Applying To?</Form.Label>
-                    <Form.Select aria-label="Default select example">
-                      <option value="Warrior">Wind Bridge</option>
-                      <option value="Hunter">Clear Comms</option>
+                    <Form.Select name="team_choice" aria-label="Default select example">
+                      <option value="Windbridge">Windbridge</option>
+                      <option value="Clear Comms">Clear Comms</option>
                     </Form.Select>
                   </Form.Group>
                   <Form.Group className="form-group mb-3">
                     <Form.Label>Primary Spec</Form.Label>
-                    <Form.Control type="text"/>
+                    <Form.Control name="primary_spec" type="text"/>
                   </Form.Group>
                   <Form.Group className="form-group mb-3">
                     <Form.Label>Raider.io Link</Form.Label>
-                    <Form.Control type="url" />
+                    <Form.Control name="raiderio_link" type="url" />
                   </Form.Group>
                   <Form.Group className="form-group mb-3">
                     <Form.Label>Warcraftlogs Link</Form.Label>
-                    <Form.Control type="url" />
+                    <Form.Control name="warcraftlogs_link" type="url" />
                   </Form.Group>
                   <Form.Group className="form-group mb-3" controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Tell Us About Yourself (Real Life)</Form.Label>
-                    <Form.Control as="textarea" rows={3} />
+                    <Form.Control name="real_life_summary" as="textarea" rows={3} />
                   </Form.Group>
                   <Form.Group className="form-group mb-3" controlId="exampleForm.ControlTextarea1">
                     <Form.Label>What experience, skill, and attitude will you bring to the guild?</Form.Label>
-                    <Form.Control as="textarea" rows={3} />
+                    <Form.Control name="skills_summary" as="textarea" rows={3} />
                   </Form.Group>
                   <Form.Group className="form-group mb-3" controlId="exampleForm.ControlTextarea1">
                     <Form.Label>How often do you play WoW? We're looking to build a community of people that play the game often, not people who exclusively raid log. </Form.Label>
-                    <Form.Control as="textarea" rows={3} />
+                    <Form.Control name="proclivity_summary" as="textarea" rows={3} />
                   </Form.Group>
                   <Form.Group className="form-group mb-3">
                     <Form.Label>Does Pineapple Belong On Pizza?</Form.Label>
-                    <Form.Control type="text"/>
+                    <Form.Control name="pizza_question" type="text"/>
                   </Form.Group>
                   <Button variant="primary" type="submit" ref={submitButton}>
                     Submit

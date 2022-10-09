@@ -141,7 +141,7 @@ const database = {
     {
       featured: true,
       image: 'https://i.ibb.co/4YNK3hh/cinematic-render-2.jpg',
-      title: "Now You are all set, Scroll down to Apply!",
+      title: "Now you are ready to apply; scroll down to fill out the application!",
     },
   ],
   achievements: [
