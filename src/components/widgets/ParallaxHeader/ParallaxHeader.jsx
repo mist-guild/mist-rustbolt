@@ -1,126 +1,141 @@
-import React   from "react";
+import React from "react";
 import { useEffect, useRef, useState } from "react";
 import { useCustomState } from "../../../state/state";
 import { Layout } from "../../layouts";
 import { Button } from "../../elements";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import dragon from './1.gif';
-import {
-  HomeTeams,
-  VideoHeader,
-} from "../../widgets";
-import './ParallaxHeader.css';
+import dragon from "./1.gif";
+import { HomeTeams, VideoHeader } from "../../widgets";
+import "./ParallaxHeader.css";
 
 export default () => {
   //gsap init
   gsap.registerPlugin(ScrollTrigger);
-  gsap.defaults({ease: "none"});
+  gsap.defaults({ ease: "none" });
 
-  let calculateAngle = function(e, item, parent) {
-    let dropShadowColor = `rgba(0, 0, 0, 0.3)`
-    if(parent.getAttribute('data-filter-color') !== null) {
-        dropShadowColor = parent.getAttribute('data-filter-color');
+  let calculateAngle = function (e, item, parent) {
+    let dropShadowColor = `rgba(0, 0, 0, 0.3)`;
+    if (parent.getAttribute("data-filter-color") !== null) {
+      dropShadowColor = parent.getAttribute("data-filter-color");
     }
 
-    parent.classList.add('animated');
+    parent.classList.add("animated");
     // Get the x position of the users mouse, relative to the button itself
     let x = Math.abs(item.getBoundingClientRect().x - e.clientX);
     // Get the y position relative to the button
     let y = Math.abs(item.getBoundingClientRect().y - e.clientY);
 
     // Calculate half the width and height
-    let halfWidth  = item.getBoundingClientRect().width / 2;
+    let halfWidth = item.getBoundingClientRect().width / 2;
     let halfHeight = item.getBoundingClientRect().height / 2;
 
     // Use this to create an angle. I have divided by 6 and 4 respectively so the effect looks good.
     // Changing these numbers will change the depth of the effect.
     let calcAngleX = (x - halfWidth) / 36;
     let calcAngleY = (y - halfHeight) / 34;
-  
-    let gX = (1 - (x / (halfWidth * 2))) * 100;
-    let gY = (1 - (y / (halfHeight * 2))) * 100;
-  
-    item.querySelector('.glare').style.background = `radial-gradient(circle at ${gX}% ${gY}%, rgb(199 198 243), transparent)`;
+
+    let gX = (1 - x / (halfWidth * 2)) * 100;
+    let gY = (1 - y / (halfHeight * 2)) * 100;
+
+    item.querySelector(
+      ".glare"
+    ).style.background = `radial-gradient(circle at ${gX}% ${gY}%, rgb(199 198 243), transparent)`;
     // And set its container's perspective.
-    parent.style.perspective = `${halfWidth * 6}px`
-    item.style.perspective = `${halfWidth * 6}px`
+    parent.style.perspective = `${halfWidth * 6}px`;
+    item.style.perspective = `${halfWidth * 6}px`;
 
     // Set the items transform CSS property
     item.style.transform = `rotateY(${calcAngleX}deg) rotateX(${-calcAngleY}deg) scale(1.04)`;
-    parent.querySelector('.inner-card-backface').style.transform = `rotateY(${calcAngleX}deg) rotateX(${-calcAngleY}deg) scale(1.04) translateZ(-4px)`;
-  
-    if(parent.getAttribute('data-custom-perspective') !== null) {
-        parent.style.perspective = `${parent.getAttribute('data-custom-perspective')}`
+    parent.querySelector(
+      ".inner-card-backface"
+    ).style.transform = `rotateY(${calcAngleX}deg) rotateX(${-calcAngleY}deg) scale(1.04) translateZ(-4px)`;
+
+    if (parent.getAttribute("data-custom-perspective") !== null) {
+      parent.style.perspective = `${parent.getAttribute(
+        "data-custom-perspective"
+      )}`;
     }
 
     // Reapply this to the shadow, with different dividers
     let calcShadowX = (x - halfWidth) / 3;
     let calcShadowY = (y - halfHeight) / 6;
-    
+
     // Add a filter shadow - this is more performant to animate than a regular box shadow.
     item.style.filter = `drop-shadow(${-calcShadowX}px ${-calcShadowY}px 15px ${dropShadowColor})`;
-}
-document.querySelectorAll('.card2').forEach(function(item) {
-    if(item.querySelector('.flip') !== null) {
-      item.querySelector('.flip').addEventListener('click', function() {
-        item.classList.add('flipped');
+  };
+  document.querySelectorAll(".card2").forEach(function (item) {
+    if (item.querySelector(".flip") !== null) {
+      item.querySelector(".flip").addEventListener("click", function () {
+        item.classList.add("flipped");
       });
     }
-    if(item.querySelector('.unflip') !== null) {
-      item.querySelector('.unflip').addEventListener('click', function() {
-        item.classList.remove('flipped');
+    if (item.querySelector(".unflip") !== null) {
+      item.querySelector(".unflip").addEventListener("click", function () {
+        item.classList.remove("flipped");
       });
     }
-    item.addEventListener('mouseenter', function(e) {
-        calculateAngle(e, this.querySelector('.inner-card'), this);
+    item.addEventListener("mouseenter", function (e) {
+      calculateAngle(e, this.querySelector(".inner-card"), this);
     });
 
-    item.addEventListener('mousemove', function(e) {
-        calculateAngle(e, this.querySelector('.inner-card'), this);
+    item.addEventListener("mousemove", function (e) {
+      calculateAngle(e, this.querySelector(".inner-card"), this);
     });
 
-    item.addEventListener('mouseleave', function(e) {
-        let dropShadowColor = `rgba(0, 0, 0, 0.3)`
-        if(item.getAttribute('data-filter-color') !== null) {
-            dropShadowColor = item.getAttribute('data-filter-color')
-        }
-        item.classList.remove('animated');
-        item.querySelector('.inner-card').style.transform = `rotateY(0deg) rotateX(0deg) scale(1)`;
-        item.querySelector('.inner-card-backface').style.transform = `rotateY(0deg) rotateX(0deg) scale(1.01) translateZ(-4px)`;
-        item.querySelector('.inner-card').style.filter = `drop-shadow(0 10px 15px ${dropShadowColor})`;
-    });
-})
-document.querySelectorAll('.card3').forEach(function(item) {
-  if(item.querySelector('.flip') !== null) {
-    item.querySelector('.flip').addEventListener('click', function() {
-      item.classList.add('flipped');
-    });
-  }
-  if(item.querySelector('.unflip') !== null) {
-    item.querySelector('.unflip').addEventListener('click', function() {
-      item.classList.remove('flipped');
-    });
-  }
-  item.addEventListener('mouseenter', function(e) {
-      calculateAngle(e, this.querySelector('.inner-card'), this);
-  });
-
-  item.addEventListener('mousemove', function(e) {
-      calculateAngle(e, this.querySelector('.inner-card'), this);
-  });
-
-  item.addEventListener('mouseleave', function(e) {
-      let dropShadowColor = `rgba(0, 0, 0, 0.3)`
-      if(item.getAttribute('data-filter-color') !== null) {
-          dropShadowColor = item.getAttribute('data-filter-color')
+    item.addEventListener("mouseleave", function (e) {
+      let dropShadowColor = `rgba(0, 0, 0, 0.3)`;
+      if (item.getAttribute("data-filter-color") !== null) {
+        dropShadowColor = item.getAttribute("data-filter-color");
       }
-      item.classList.remove('animated');
-      item.querySelector('.inner-card').style.transform = `rotateY(0deg) rotateX(0deg) scale(1)`;
-      item.querySelector('.inner-card-backface').style.transform = `rotateY(0deg) rotateX(0deg) scale(1.01) translateZ(-4px)`;
-      item.querySelector('.inner-card').style.filter = `drop-shadow(0 10px 15px ${dropShadowColor})`;
+      item.classList.remove("animated");
+      item.querySelector(
+        ".inner-card"
+      ).style.transform = `rotateY(0deg) rotateX(0deg) scale(1)`;
+      item.querySelector(
+        ".inner-card-backface"
+      ).style.transform = `rotateY(0deg) rotateX(0deg) scale(1.01) translateZ(-4px)`;
+      item.querySelector(
+        ".inner-card"
+      ).style.filter = `drop-shadow(0 10px 15px ${dropShadowColor})`;
+    });
   });
-})
+  document.querySelectorAll(".card3").forEach(function (item) {
+    if (item.querySelector(".flip") !== null) {
+      item.querySelector(".flip").addEventListener("click", function () {
+        item.classList.add("flipped");
+      });
+    }
+    if (item.querySelector(".unflip") !== null) {
+      item.querySelector(".unflip").addEventListener("click", function () {
+        item.classList.remove("flipped");
+      });
+    }
+    item.addEventListener("mouseenter", function (e) {
+      calculateAngle(e, this.querySelector(".inner-card"), this);
+    });
+
+    item.addEventListener("mousemove", function (e) {
+      calculateAngle(e, this.querySelector(".inner-card"), this);
+    });
+
+    item.addEventListener("mouseleave", function (e) {
+      let dropShadowColor = `rgba(0, 0, 0, 0.3)`;
+      if (item.getAttribute("data-filter-color") !== null) {
+        dropShadowColor = item.getAttribute("data-filter-color");
+      }
+      item.classList.remove("animated");
+      item.querySelector(
+        ".inner-card"
+      ).style.transform = `rotateY(0deg) rotateX(0deg) scale(1)`;
+      item.querySelector(
+        ".inner-card-backface"
+      ).style.transform = `rotateY(0deg) rotateX(0deg) scale(1.01) translateZ(-4px)`;
+      item.querySelector(
+        ".inner-card"
+      ).style.filter = `drop-shadow(0 10px 15px ${dropShadowColor})`;
+    });
+  });
 
   const [state, actions] = useCustomState();
   const [randomColor, setRandomColor] = useState("#0d2240");
@@ -128,29 +143,53 @@ document.querySelectorAll('.card3').forEach(function(item) {
   //liquid logo animation
   useEffect(() => {
     const interval = setInterval(() => {
-      setRandomColor(Math.floor(Math.random()*16777215).toString(16));
+      setRandomColor(Math.floor(Math.random() * 16777215).toString(16));
     }, 3000);
     return () => clearInterval(interval);
   }, []);
-  
-  
+
   // get window dimensions
-  function getWindowDimensions() { const { innerWidth: width, innerHeight: height } = window;return {width,height};}
+  function getWindowDimensions() {
+    const { innerWidth: width, innerHeight: height } = window;
+    return { width, height };
+  }
   function useWindowDimensions() {
-    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-    useEffect(() => {function handleResize() {setWindowDimensions(getWindowDimensions());} window.addEventListener('resize', handleResize); return () => window.removeEventListener('resize', handleResize);}, []);
+    const [windowDimensions, setWindowDimensions] = useState(
+      getWindowDimensions()
+    );
+    useEffect(() => {
+      function handleResize() {
+        setWindowDimensions(getWindowDimensions());
+      }
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
     return windowDimensions;
   }
   const { height, width } = useWindowDimensions();
 
   //get mouse position
-  const [mousePosition,setMousePosition] = React.useState({ x: null, y: null });
-  useEffect(() => {const updateMousePosition = ev => {setMousePosition({ x: ev.clientX, y: ev.clientY });};window.addEventListener('mousemove', updateMousePosition);return () => {window.removeEventListener('mousemove', updateMousePosition);};}, []);
-  const mouseX = mousePosition.x; const mouseY = mousePosition.y;
+  const [mousePosition, setMousePosition] = React.useState({
+    x: null,
+    y: null,
+  });
+  useEffect(() => {
+    const updateMousePosition = (ev) => {
+      setMousePosition({ x: ev.clientX, y: ev.clientY });
+    };
+    window.addEventListener("mousemove", updateMousePosition);
+    return () => {
+      window.removeEventListener("mousemove", updateMousePosition);
+    };
+  }, []);
+  const mouseX = mousePosition.x;
+  const mouseY = mousePosition.y;
 
   //teams animation
   const teamsSection = useRef();
-  useEffect(() => {gsap.to(teamsSection.current, {x: -mouseX/20, y: -mouseY/20,});}, [mouseX, mouseY]);
+  useEffect(() => {
+    gsap.to(teamsSection.current, { x: -mouseX / 20, y: -mouseY / 20 });
+  }, [mouseX, mouseY]);
 
   return (
     <div
@@ -161,8 +200,7 @@ document.querySelectorAll('.card3').forEach(function(item) {
     >
       <Layout col="1">
         <section className="about" id="about">
-          
-          <div  className="fade">
+          {/* <div  className="fade">
             <div className="card2 user" style={{height:'fit-content'}}>
               <span className="inner-card-backface" style={{background:'transparent'}}>
                 <span className="flip-inner-card">
@@ -173,30 +211,64 @@ document.querySelectorAll('.card3').forEach(function(item) {
                 <span className="glare"></span>
               </span>
             </div>
-          </div>
-          <div className="intro" style={{marginTop:'30px'}}>
-          <img className="dragon" src={dragon} alt="Computer man"/>
-            <h1>
-            About Us
-            </h1>
-            <h4 style={{fontWeight:'200', lineHeight:'normal'}}>
-              Mist is a cutting-edge guild focused on us-250 progression. Our guild prides itself on always improving. We want raiders who want to improve their play, improve the raid team, and improve the culture we foster here. We value solid mechanical play over individual parses. If hardcore progression doesn't fit your playstyle but you're still looking for a cutting-edge focused environment to push content, we also run a late-night two night a week group.
+          </div> */}
+          <div className="intro">
+            <img className="dragon" src={dragon} alt="Computer man" />
+            <h1>About Us</h1>
+            <h4 style={{ fontWeight: "200", lineHeight: "normal" }}>
+              Mist is a cutting-edge guild focused on us-250 progression. Our
+              guild prides itself on always improving. We want raiders who want
+              to improve their play, improve the raid team, and improve the
+              culture we foster here. We value solid mechanical play over
+              individual parses. If hardcore progression doesn't fit your
+              playstyle but you're still looking for a cutting-edge focused
+              environment to push content, we also run a late-night two night a
+              week group.
             </h4>
-            <div className="about-buttons" style={{display:'flex', flexDirection:'row', alignItems: 'center', justifyContent: 'center', gap:'20px', flexWrap:'wrap', width:'100%'}}>
-              <Button click={() => actions.toogleModal()} hoverType="solid-white-tb">
+            <div
+              className="about-buttons"
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "20px",
+                flexWrap: "wrap",
+                width: "100%",
+              }}
+            >
+              <Button
+                click={() => actions.toogleModal()}
+                hoverType="solid-white-tb"
+              >
                 RAIDER.IO
               </Button>
-              <Button click={() => actions.toogleModal()} hoverType="solid-white-tb">
+              <Button
+                click={() => actions.toogleModal()}
+                hoverType="solid-white-tb"
+              >
                 WOW PROGRESS
               </Button>
-              <Button click={() => actions.toogleModal()} hoverType="solid-white-tb">
+              <Button
+                click={() => actions.toogleModal()}
+                hoverType="solid-white-tb"
+              >
                 Place Holder
               </Button>
             </div>
           </div>
         </section>
         <section id="teams">
-          <div ref={teamsSection} style={{display:'flex', flexDirection:'column', alignItems: 'center', justifyContent: 'center', height:'100%'}}>
+          <div
+            ref={teamsSection}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              height: "100%",
+            }}
+          >
             <h1>Teams</h1>
             <HomeTeams data={state.data.teams} />
           </div>
@@ -205,30 +277,88 @@ document.querySelectorAll('.card3').forEach(function(item) {
           <h1 style={{textAlign:'center', fontSize: '10vw', color:'white'}}>Overview</h1>
           <iframe width="100%" height={window.innerHeight*0.8} src="https://www.youtube.com/embed/UANuDDQTNKY" title="Dragonflight Date Announce Trailer | World of Warcraft" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div> */}
-        <section id="highlights" style={width<=992?{height:'fit-content'}:{}}>
+        <section
+          id="highlights"
+          style={width <= 992 ? { height: "fit-content" } : {}}
+        >
           <h1>HighLights</h1>
-          <div  style={{display:'flex', flexDirection:'row', alignItems: 'center', justifyContent: 'center', gap:'1%', flexWrap:'wrap'}}>
-            <VideoHeader autoPlay={false} width={width> 992? '45%' : '80%'} height={width> 992? '45%' : '40vh'}/>
-            <VideoHeader autoPlay={false} width={width> 992? '45%' : '80%'} height={width> 992? '45%' : '40vh'}/>
-            <VideoHeader autoPlay={false} width={width> 992? '45%' : '80%'} height={width> 992? '45%' : '40vh'}/>
-            <VideoHeader autoPlay={false} width={width> 992? '45%' : '80%'} height={width> 992? '45%' : '40vh'}/>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "1%",
+              flexWrap: "wrap",
+            }}
+          >
+            <VideoHeader
+              autoPlay={false}
+              width={width > 992 ? "45%" : "80%"}
+              height={width > 992 ? "45%" : "40vh"}
+            />
+            <VideoHeader
+              autoPlay={false}
+              width={width > 992 ? "45%" : "80%"}
+              height={width > 992 ? "45%" : "40vh"}
+            />
+            <VideoHeader
+              autoPlay={false}
+              width={width > 992 ? "45%" : "80%"}
+              height={width > 992 ? "45%" : "40vh"}
+            />
+            <VideoHeader
+              autoPlay={false}
+              width={width > 992 ? "45%" : "80%"}
+              height={width > 992 ? "45%" : "40vh"}
+            />
           </div>
         </section>
-        <section className="goals" id="goals" style={{height:'fit-content', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
-          <h1 style={{textAlign:'center'}}>
-            Guild Philosophy
-          </h1>
-          <div className="card3 user" style={{height:'fit-content', width:'100%'}}>
-            <span className="inner-card-backface" style={{background:'transparent'}}>
-              <span className="flip-inner-card">
-              </span>
+        <section
+          className="goals"
+          id="goals"
+          style={{
+            height: "fit-content",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <h1 style={{ textAlign: "center" }}>Guild Philosophy</h1>
+          <div
+            className="card3 user"
+            style={{ height: "fit-content", width: "100%" }}
+          >
+            <span
+              className="inner-card-backface"
+              style={{ background: "transparent" }}
+            >
+              <span className="flip-inner-card"></span>
             </span>
-            <span className="inner-card" style={{background:'transparent', width:'100%'}}>
-              <div className="intro" style={{maxWidth:'unset', padding:'100px', borderRadius:'25px'}}>
-                
+            <span
+              className="inner-card"
+              style={{ background: "transparent", width: "100%" }}
+            >
+              <div
+                className="intro"
+                style={{
+                  maxWidth: "unset",
+                  padding: "100px",
+                  borderRadius: "25px",
+                }}
+              >
                 <div className="goals">
-                  <p style={{padding:'2vw'}}>Mist is a cutting-edge guild focused on us-250 progression. Our guild prides itself on always improving. We want raiders who want to improve their play, improve the raid team, and improve the culture we foster here. We value solid mechanical play over individual parses. If hardcore progression doesn't fit your playstyle but you're still looking for a cutting-edge focused environment to push content, we also run a late-night two night a week group.</p>
-                    <img src="https://i.ibb.co/wCR7NmS/logo.png" alt=""/>
+                  <p style={{ padding: "2vw" }}>
+                    Mist is a cutting-edge guild focused on us-250 progression.
+                    Our guild prides itself on always improving. We want raiders
+                    who want to improve their play, improve the raid team, and
+                    improve the culture we foster here. We value solid
+                    mechanical play over individual parses. If hardcore
+                    progression doesn't fit your playstyle but you're still
+                    looking for a cutting-edge focused environment to push
+                    content, we also run a late-night two night a week group.
+                  </p>
+                  <img src="https://i.ibb.co/wCR7NmS/logo.png" alt="" />
                 </div>
               </div>
               <span className="glare"></span>
@@ -236,10 +366,7 @@ document.querySelectorAll('.card3').forEach(function(item) {
           </div>
         </section>
       </Layout>
-      <div className="form">
-        
-      </div>
-      
+      <div className="form"></div>
     </div>
   );
 };
