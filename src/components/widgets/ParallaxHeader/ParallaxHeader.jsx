@@ -281,7 +281,7 @@ export default () => {
           id="highlights"
           style={width <= 992 ? { height: "fit-content" } : {}}
         >
-          <h1>HighLights</h1>
+          <h1>Highlights</h1>
           <div
             style={{
               display: "flex",

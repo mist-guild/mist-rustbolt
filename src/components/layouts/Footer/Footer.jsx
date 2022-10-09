@@ -32,14 +32,14 @@ export default () => {
           <div className={styles.links}>
             <h4>Teams</h4>
             <Link
-              url={"/teams/twb"}
+              url={"/teams/windbridge"}
               hoverStyle={{ color: '#62C8E8' }}
             >
               <i className="las la-angle-right" />
               Team Wind Bridge
             </Link>
             <Link
-              url={"/teams/tcc"}
+              url={"/teams/clear-comms"}
               hoverStyle={{ color: '#62C8E8' }}
             >
               <i className="las la-angle-right" />

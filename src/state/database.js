@@ -22,12 +22,12 @@ const database = {
     {
       children: [
         {
-          name: "Team Wind Bridge",
-          url: "/teams/twb",
+          name: "Team Windbridge",
+          url: "/teams/windbridge",
         },
         {
           name: "Team Clear Comms",
-          url: "/teams/tcc",
+          url: "/teams/clear-comms",
         },
       ],
       name: "Teams",
@@ -44,8 +44,8 @@ const database = {
       featured: true,
       id: "post_0",
       image: 'https://i.ibb.co/4YNK3hh/cinematic-render-2.jpg',
-      short: "WE WANT RAIDERS WHO WANT TO IMPROVE THEIR PLAY, IMPROVE THE RAID TEAM, AND IMPROVE THE CULTURE WE FOSTER HERE.",
-      title: "Mist is a cutting-edge guild focused on us-250 progression.",
+      short: "Mist is a CE focused guild that wants raiders who want to improve, improve the raid team, and improve the culture we foster.",
+      title: "Mist - Illidan",
       user_id: "2",
     },
     {
@@ -189,7 +189,7 @@ const database = {
     {
       name: "Sanctum of Domination ",
       icon: 'https://i.ibb.co/fDzyrLk/pngwing-com-1.png',
-      bg: 'https://cdn1.dotesports.com/wp-content/uploads/2020/12/10013745/gargoyle.jpg',
+      bg: 'https://render.worldofwarcraft.com/us/zones/sanctum-of-domination-small.jpg',
       description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis ratione commodi sint illo facere id dolore repudiandae, ex dignissimos molestiae voluptatum, totam quia? Laborum dolore modi voluptatibus alias fugit perferendis.",
     },
     {
@@ -213,14 +213,14 @@ const database = {
   ],
   teams: [
     {
-      name: "Team Wind Bridge",
+      name: "Team Windbridge",
       short: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
       description:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis ratione commodi sint illo facere id dolore repudiandae, ex dignissimos molestiae voluptatum, totam quia? Laborum dolore modi voluptatibus alias fugit perferendis.",
       icon: 'https://i.ibb.co/GsdyVtt/sire-Denathrius-Big.png',
       id: 0,
       bg: 'https://cdn1.dotesports.com/wp-content/uploads/2020/12/10013745/gargoyle.jpg',
-      link: "/teams/twb",
+      link: "/teams/windbridge",
       TimeRanges: [
         { 
           time: 'TUESDAY: 9PM-12AM CST'
@@ -241,7 +241,7 @@ const database = {
       icon: 'https://www.pngall.com/wp-content/uploads/11/World-Of-Warcraft-PNG-HD-Image.png',
       id: 1,
       bg: 'https://wallpapercave.com/wp/wp10407651.jpg',
-      link: "/teams/tcc",
+      link: "/teams/clear-comms",
       TimeRanges: [
         { 
           time: 'MONDAY: 10PM-1AM CST'
@@ -303,39 +303,112 @@ const database = {
   members2: [
     {
       id: 0,
-      user: 'Billygates',
+      user: 'Ragnòn',
       officer: true,
-      discord: 'Billygates#1234',
-      about: '',
+      discord: 'Ragnòn#1234',
+      about: 'Very based lead.',
     },
     {
       id: 1,
-      user: 'Äni',
-      officer: false,
+      user: 'Enzyte',
+      discord: 'Enzyte#1234',
+      officer: true,
     },
     {
       id: 2,
-      user: 'Zensy',
-      officer: false,
+      user: 'Bossxstabbyx',
+      discord: 'Boss#1234',
+      officer: true,
     },
     {
       id: 3,
-      user: 'Ducksyan',
-      officer: false,
-    },
-    {
-      id: 3,
-      user: 'Mysticplay',
-      officer: false,
+      user: 'Tucksdru',
+      discord: 'Tucks#1234',
+      officer: true,
     },
     {
       id: 4,
-      user: 'Mysticplay',
+      user: 'Taekwonyolo',
       officer: false,
     },
     {
       id: 5,
-      user: 'Mysticplay',
+      user: 'Holeedeez',
+      officer: false,
+    },
+    {
+      id: 6,
+      user: 'Hoobz',
+      officer: false,
+    },
+    {
+      id: 7,
+      user: 'Cloùdz',
+      officer: false,
+    },
+    {
+      id: 8,
+      user: 'Tortz',
+      officer: false,
+    },
+    {
+      id: 9,
+      user: 'Foils',
+      officer: false,
+    },
+    {
+      id: 10,
+      user: 'Köenigsegg',
+      officer: false,
+    },
+    {
+      id: 11,
+      user: 'Shreffi',
+      officer: false,
+    },
+    {
+      id: 12,
+      user: 'Kholio',
+      officer: false,
+    },
+    {
+      id: 13,
+      user: 'Nullzy',
+      officer: false,
+    },
+    {
+      id: 14,
+      user: 'Icantsurvive',
+      officer: false,
+    },
+    {
+      id: 15,
+      user: 'Spuggleworth',
+      officer: false,
+    },
+    {
+      id: 16,
+      user: 'Dyteo',
+      officer: false,
+    },
+    {
+      id: 17,
+      user: 'Kirillas',
+      officer: false,
+    },
+    {
+      id: 18,
+      user: 'Archora',
+      officer: false,
+    },
+    {
+      id: 19,
+      user: 'Xolten',
+      officer: false,
+    },
+    {
+      id: 20,
+      user: 'Vynlanesh',
       officer: false,
     },
   ],

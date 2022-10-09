@@ -3,7 +3,7 @@ section {
   justify-content: center;
   align-items: center;
   height: fit-content;
-  min-height: calc(50vh);
+  min-height: calc(55vh);
   margin: 100px 0px !important;
 }
 
@@ -102,7 +102,7 @@ section#highlights {
 }
 
 .parallax h1 {
-  font-size: max(5vw, 36px);
+  font-size: max(6vw, 36px);
   cursor: default;
   text-align: center;
   color: #fff;

@@ -30,8 +30,8 @@ export default () => {
           <Switch>
             <Route path="/home" exact component={Home} />
             <Route path="/apply" exact component={Apply} />
-            <Route path="/teams/twb" exact component={Teams1} />
-            <Route path="/teams/tcc" exact component={Teams2} />
+            <Route path="/teams/windbridge" exact component={Teams1} />
+            <Route path="/teams/clear-comms" exact component={Teams2} />
             <Redirect to="/home" />
           </Switch>
           <Footer />

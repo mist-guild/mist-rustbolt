@@ -83,8 +83,9 @@ document.querySelectorAll('.card2').forEach(function(item) {
     fetch('https://raider.io/api/v1/characters/profile?region=us&realm=illidan&name=' + user +'&fields=mythic_plus_scores')
       .then((res) => res.json())
       .then((res) => {
-        fetchUsers([...Users, res])
+          fetchUsers([...Users, res])
       })
+      .catch((err) => console.log(err))
   }
   
   useEffect(() => {
@@ -136,7 +137,7 @@ document.querySelectorAll('.card2').forEach(function(item) {
               </div>
             : null}
           </span>
-          <span className="user-icon"> <img src={require('./icons/'+item.class+'.png')} alt={item.class+' icon'}/>
+          <span className="user-icon"> <img src={require('./icons/' + item.class + '.png')} alt={'Name Change..'}/>
           </span>
         </span>
         <span className="glare"></span>
