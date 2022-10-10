@@ -43,7 +43,7 @@ const database = {
       category_id: 1,
       featured: true,
       id: "post_0",
-      image: 'https://i.ibb.co/4YNK3hh/cinematic-render-2.jpg',
+      image: 'https://raw.githubusercontent.com/zakpruitt/mist-website/master/src/assets/df_render_2.png',
       short: "Mist is a CE focused guild that wants raiders who want to improve, improve the raid team, and improve the culture we foster.",
       title: "Mist - Illidan",
       user_id: "2",
@@ -52,12 +52,12 @@ const database = {
   requirements: [
     {
       featured: true,
-      image: 'https://i.ibb.co/4YNK3hh/cinematic-render-2.jpg',
+      image: 'https://raw.githubusercontent.com/zakpruitt/mist-website/master/src/assets/df.png',
       title: "Please make sure to read the following requirements before applying.",
     },
     {
       featured: true,
-      image: 'https://i.ibb.co/4YNK3hh/cinematic-render-2.jpg',
+      image: 'https://raw.githubusercontent.com/zakpruitt/mist-website/master/src/assets/df_key_art.png',
       title: "General Requirements",
       data: [
         {
@@ -82,7 +82,7 @@ const database = {
     },
     {
       featured: true,
-      image: 'https://wallpapercave.com/wp/wp10407651.jpg',
+      image: 'https://raw.githubusercontent.com/zakpruitt/mist-website/master/src/assets/cinematic_render_4.png',
       title: "In-Game Requirements",
       data: [
         {
@@ -104,7 +104,7 @@ const database = {
     },
     {
       featured: true,
-      image: 'https://wallpapercave.com/wp/wp10407651.jpg',
+      image: 'https://raw.githubusercontent.com/zakpruitt/mist-website/master/src/assets/df_azure_span.png',
       title: "MANDATORY ADDONS",
       data: [
         {
@@ -131,7 +131,7 @@ const database = {
     },
     {
       featured: true,
-      image: 'https://i.ibb.co/4YNK3hh/cinematic-render-2.jpg',
+      image: 'https://raw.githubusercontent.com/zakpruitt/mist-website/master/src/assets/df_render_3.png',
       title: "Now you are ready to apply; scroll down to fill out the application!",
     },
   ],
@@ -210,7 +210,7 @@ const database = {
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis ratione commodi sint illo facere id dolore repudiandae, ex dignissimos molestiae voluptatum, totam quia? Laborum dolore modi voluptatibus alias fugit perferendis.",
       icon: 'https://i.ibb.co/GsdyVtt/sire-Denathrius-Big.png',
       id: 0,
-      bg: 'https://cdn1.dotesports.com/wp-content/uploads/2020/12/10013745/gargoyle.jpg',
+      bg: 'https://raw.githubusercontent.com/zakpruitt/mist-website/master/src/assets/df_render_1.png',
       link: "/teams/windbridge",
       TimeRanges: [
         { 
