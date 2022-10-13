@@ -7,6 +7,7 @@ import { useCustomState } from "../../../state/state";
 import './Teams.css';
 import CastleCard from "../../widgets/CastleCard/CastleCard";
 import { Layout } from "../../layouts";
+import ScrollContainer from 'react-indiana-drag-scroll'
 
 export default ({ data = [] }) => {
   const state = useCustomState()[0];
@@ -73,7 +74,7 @@ export default ({ data = [] }) => {
     // Add a filter shadow - this is more performant to animate than a regular box shadow.
     item.style.filter = `drop-shadow(${-calcShadowX}px ${-calcShadowY}px 15px ${dropShadowColor})`;
 }
-document.querySelectorAll('.card3').forEach(function(item) {
+document.querySelectorAll('.card2').forEach(function(item) {
     if(item.querySelector('.flip') !== null) {
       item.querySelector('.flip').addEventListener('click', function() {
         item.classList.add('flipped');
@@ -145,13 +146,18 @@ document.querySelectorAll('.card3').forEach(function(item) {
           >
             <section style={{height:'fit-content', flexDirection:'column', margin:'30px'}} ref={scrollToref}>
               <h1>Our Progress</h1>
-              <Layout col="3" style={{background:'rgba(0,0,0,0.4)', height:'fit-content', padding:'50px 0px', borderRadius:'50px'}}>
-                <CastleCard name={item[0].name} bg={item[0].bg} icon={item[0].icon} description={item[0].description} link={item[0].link} progress={nathria2} world={nathria.world} region={nathria.region} realm={nathria.realm}/>
-                <CastleCard name={item[4].name} bg={item[4].bg} icon={item[4].icon} description={item[4].description} link={item[4].link} progress={sepulcher2} world={sepulcher.world} region={sepulcher.region} realm={sepulcher.realm}/>
-                <CastleCard name={item[2].name} bg={item[2].bg} icon={item[2].icon} description={item[2].description} link={item[2].link} progress={sanctum2} world={sanctum.world} region={sanctum.region} realm={sanctum.realm}/>
-                {/* <CastleCard name={item[1].name} bg={item[1].bg} icon={item[1].icon} description={item[1].description} progress={fatednathria2} world={fatednathria.world} region={fatednathria.region} realm={fatednathria.realm}/> */}
-                {/* <CastleCard name={item[3].name} bg={item[3].bg} icon={item[3].icon} description={item[3].description} progress={fatedsanctum2} world={fatedsanctum.world} region={fatedsanctum.region} realm={fatedsanctum.realm}/> */}
-                {/* <CastleCard name={item[5].name} bg={item[5].bg} icon={item[5].icon} description={item[5].description} progress={fatedsepulcher2} world={fatedsepulcher.world} region={fatedsepulcher.region} realm={fatedsepulcher.realm}/> */}
+              <Layout col="1" style={{background:'rgba(0,0,0,0.4)', height:'fit-content', borderRadius:'50px'}}>
+                <ScrollContainer className="scroll-container" hideScrollbars={false} vertical={false}>
+                    <CastleCard name={item[0].name} bg={item[0].bg} icon={item[0].icon} description={item[0].description} progress={nathria2} world={nathria.world} region={nathria.region} realm={nathria.realm}/>
+                    <CastleCard name={item[4].name} bg={item[4].bg} icon={item[4].icon} description={item[4].description} progress={sepulcher2} world={sepulcher.world} region={sepulcher.region} realm={sepulcher.realm}/>
+                    <CastleCard name={item[2].name} bg={item[2].bg} icon={item[2].icon} description={item[2].description} progress={sanctum2} world={sanctum.world} region={sanctum.region} realm={sanctum.realm}/>
+                    <CastleCard name={item[0].name} bg={item[0].bg} icon={item[0].icon} description={item[0].description} progress={nathria2} world={nathria.world} region={nathria.region} realm={nathria.realm}/>
+                    <CastleCard name={item[4].name} bg={item[4].bg} icon={item[4].icon} description={item[4].description} progress={sepulcher2} world={sepulcher.world} region={sepulcher.region} realm={sepulcher.realm}/>
+                    <CastleCard name={item[2].name} bg={item[2].bg} icon={item[2].icon} description={item[2].description} progress={sanctum2} world={sanctum.world} region={sanctum.region} realm={sanctum.realm}/>
+                    {/* <CastleCard name={item[1].name} bg={item[1].bg} icon={item[1].icon} description={item[1].description} progress={fatednathria2} world={fatednathria.world} region={fatednathria.region} realm={fatednathria.realm}/> */}
+                    {/* <CastleCard name={item[3].name} bg={item[3].bg} icon={item[3].icon} description={item[3].description} progress={fatedsanctum2} world={fatedsanctum.world} region={fatedsanctum.region} realm={fatedsanctum.realm}/> */}
+                    {/* <CastleCard name={item[5].name} bg={item[5].bg} icon={item[5].icon} description={item[5].description} progress={fatedsepulcher2} world={fatedsepulcher.world} region={fatedsepulcher.region} realm={fatedsepulcher.realm}/> */}
+                </ScrollContainer>
               </Layout>
             </section>
             <Layout col="1">
@@ -159,7 +165,7 @@ document.querySelectorAll('.card3').forEach(function(item) {
                 <h1 style={{textAlign:'center'}}>
                   Our Goals
                 </h1>
-                <div className="card3 user" style={{height:'fit-content', width:'100%'}}>
+                <div className="card2 user" style={{height:'fit-content', width:'100%'}}>
                   <span className="inner-card-backface" style={{background:'transparent'}}>
                     <span className="flip-inner-card">
                     </span>

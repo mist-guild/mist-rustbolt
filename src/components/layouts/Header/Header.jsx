@@ -58,15 +58,17 @@ export default ({ data = [] }) => {
         <ul className={styles.menu}>{menu}</ul>
 
         <div className={styles.btn_desktop}>
-          <Button
-            after="&#xf107;"
-            type="outline-white-tw"
-            hoverType="solid-white-tb"
-            click={() => actions.toogleModal()}
-          >
-            Message Us
-          </Button>
+          <a href="" className={styles.btn}>
+            <i className="lab la-twitter"/>
+          </a>
+          <a href="" className={styles.btn}>
+            <i className="lab la-youtube"/>
+          </a>
+          <a href="" className={styles.btn}>
+            <i className="lab la-discord"/>
+          </a>
         </div>
+        
 
         <div
           className={styles.btn_mobile}

@@ -2,6 +2,35 @@
 *, *:before, *:after {
   box-sizing: border-box;
 }
+.scroll-container{
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  max-width: 80vw;
+}
+.scroll-container > * {
+  flex-basis: calc(33.333333% - 3rem);
+  margin: 30px;
+}
+.scroll-container::-webkit-scrollbar {
+  width: 16px;
+}
+
+div:has(.bosscard)::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+  margin: 50px;
+}
+
+div:has(.bosscard)::-webkit-scrollbar-thumb {
+  background-color: #62C8E8;
+  border-radius: 100px;
+
+}
+.bosscard:first-of-type{
+  margin-left: 0;
+}
 .scroll {
 	width: 60px;
 	height: 60px;
@@ -265,7 +294,7 @@ body{
 
 .clash-card__unit-description {
   color: #9E9E9E;
-  padding: 20px;
+  padding: 10px 20px;
   margin-bottom: 10px;
 }
 

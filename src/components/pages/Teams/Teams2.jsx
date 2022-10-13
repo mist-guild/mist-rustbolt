@@ -6,6 +6,7 @@ import {
 import { useCustomState } from "../../../state/state";
 import CastleCard from "../../widgets/CastleCard/CastleCard";
 import { Layout } from "../../layouts";
+import ScrollContainer from 'react-indiana-drag-scroll'
 
 export default ({ data = [] }) => {
   const state = useCustomState()[0];
@@ -27,80 +28,80 @@ export default ({ data = [] }) => {
   // const [fatedsepulcher, setFatedSepulcher] = useState([]);
   // const [fatedsepulcher2, setFatedSepulcher2] = useState([]);
 
-  let calculateAngle = function(e, item, parent) {
-    let dropShadowColor = `rgba(0, 0, 0, 0.3)`
-    if(parent.getAttribute('data-filter-color') !== null) {
-        dropShadowColor = parent.getAttribute('data-filter-color');
-    }
+//   let calculateAngle = function(e, item, parent) {
+//     let dropShadowColor = `rgba(0, 0, 0, 0.3)`
+//     if(parent.getAttribute('data-filter-color') !== null) {
+//         dropShadowColor = parent.getAttribute('data-filter-color');
+//     }
 
-    parent.classList.add('animated');
-    // Get the x position of the users mouse, relative to the button itself
-    let x = Math.abs(item.getBoundingClientRect().x - e.clientX);
-    // Get the y position relative to the button
-    let y = Math.abs(item.getBoundingClientRect().y - e.clientY);
+//     parent.classList.add('animated');
+//     // Get the x position of the users mouse, relative to the button itself
+//     let x = Math.abs(item.getBoundingClientRect().x - e.clientX);
+//     // Get the y position relative to the button
+//     let y = Math.abs(item.getBoundingClientRect().y - e.clientY);
 
-    // Calculate half the width and height
-    let halfWidth  = item.getBoundingClientRect().width / 2;
-    let halfHeight = item.getBoundingClientRect().height / 2;
+//     // Calculate half the width and height
+//     let halfWidth  = item.getBoundingClientRect().width / 2;
+//     let halfHeight = item.getBoundingClientRect().height / 2;
 
-    // Use this to create an angle. I have divided by 6 and 4 respectively so the effect looks good.
-    // Changing these numbers will change the depth of the effect.
-    let calcAngleX = (x - halfWidth) / 36;
-    let calcAngleY = (y - halfHeight) / 34;
+//     // Use this to create an angle. I have divided by 6 and 4 respectively so the effect looks good.
+//     // Changing these numbers will change the depth of the effect.
+//     let calcAngleX = (x - halfWidth) / 36;
+//     let calcAngleY = (y - halfHeight) / 34;
   
-    let gX = (1 - (x / (halfWidth * 2))) * 100;
-    let gY = (1 - (y / (halfHeight * 2))) * 100;
+//     let gX = (1 - (x / (halfWidth * 2))) * 100;
+//     let gY = (1 - (y / (halfHeight * 2))) * 100;
   
-    item.querySelector('.glare').style.background = `radial-gradient(circle at ${gX}% ${gY}%, rgb(199 198 243), transparent)`;
-    // And set its container's perspective.
-    parent.style.perspective = `${halfWidth * 6}px`
-    item.style.perspective = `${halfWidth * 6}px`
+//     item.querySelector('.glare').style.background = `radial-gradient(circle at ${gX}% ${gY}%, rgb(199 198 243), transparent)`;
+//     // And set its container's perspective.
+//     parent.style.perspective = `${halfWidth * 6}px`
+//     item.style.perspective = `${halfWidth * 6}px`
 
-    // Set the items transform CSS property
-    item.style.transform = `rotateY(${calcAngleX}deg) rotateX(${-calcAngleY}deg) scale(1.04)`;
-    parent.querySelector('.inner-card-backface').style.transform = `rotateY(${calcAngleX}deg) rotateX(${-calcAngleY}deg) scale(1.04) translateZ(-4px)`;
+//     // Set the items transform CSS property
+//     item.style.transform = `rotateY(${calcAngleX}deg) rotateX(${-calcAngleY}deg) scale(1.04)`;
+//     parent.querySelector('.inner-card-backface').style.transform = `rotateY(${calcAngleX}deg) rotateX(${-calcAngleY}deg) scale(1.04) translateZ(-4px)`;
   
-    if(parent.getAttribute('data-custom-perspective') !== null) {
-        parent.style.perspective = `${parent.getAttribute('data-custom-perspective')}`
-    }
+//     if(parent.getAttribute('data-custom-perspective') !== null) {
+//         parent.style.perspective = `${parent.getAttribute('data-custom-perspective')}`
+//     }
 
-    // Reapply this to the shadow, with different dividers
-    let calcShadowX = (x - halfWidth) / 3;
-    let calcShadowY = (y - halfHeight) / 6;
+//     // Reapply this to the shadow, with different dividers
+//     let calcShadowX = (x - halfWidth) / 3;
+//     let calcShadowY = (y - halfHeight) / 6;
     
-    // Add a filter shadow - this is more performant to animate than a regular box shadow.
-    item.style.filter = `drop-shadow(${-calcShadowX}px ${-calcShadowY}px 15px ${dropShadowColor})`;
-}
-document.querySelectorAll('.card3').forEach(function(item) {
-    if(item.querySelector('.flip') !== null) {
-      item.querySelector('.flip').addEventListener('click', function() {
-        item.classList.add('flipped');
-      });
-    }
-    if(item.querySelector('.unflip') !== null) {
-      item.querySelector('.unflip').addEventListener('click', function() {
-        item.classList.remove('flipped');
-      });
-    }
-    item.addEventListener('mouseenter', function(e) {
-        calculateAngle(e, this.querySelector('.inner-card'), this);
-    });
+//     // Add a filter shadow - this is more performant to animate than a regular box shadow.
+//     item.style.filter = `drop-shadow(${-calcShadowX}px ${-calcShadowY}px 15px ${dropShadowColor})`;
+// }
+// document.querySelectorAll('.card3').forEach(function(item) {
+//     if(item.querySelector('.flip') !== null) {
+//       item.querySelector('.flip').addEventListener('click', function() {
+//         item.classList.add('flipped');
+//       });
+//     }
+//     if(item.querySelector('.unflip') !== null) {
+//       item.querySelector('.unflip').addEventListener('click', function() {
+//         item.classList.remove('flipped');
+//       });
+//     }
+//     item.addEventListener('mouseenter', function(e) {
+//         calculateAngle(e, this.querySelector('.inner-card'), this);
+//     });
 
-    item.addEventListener('mousemove', function(e) {
-        calculateAngle(e, this.querySelector('.inner-card'), this);
-    });
+//     item.addEventListener('mousemove', function(e) {
+//         calculateAngle(e, this.querySelector('.inner-card'), this);
+//     });
 
-    item.addEventListener('mouseleave', function(e) {
-        let dropShadowColor = `rgba(0, 0, 0, 0.3)`
-        if(item.getAttribute('data-filter-color') !== null) {
-            dropShadowColor = item.getAttribute('data-filter-color')
-        }
-        item.classList.remove('animated');
-        item.querySelector('.inner-card').style.transform = `rotateY(0deg) rotateX(0deg) scale(1)`;
-        item.querySelector('.inner-card-backface').style.transform = `rotateY(0deg) rotateX(0deg) scale(1.01) translateZ(-4px)`;
-        item.querySelector('.inner-card').style.filter = `drop-shadow(0 10px 15px ${dropShadowColor})`;
-    });
-})
+//     item.addEventListener('mouseleave', function(e) {
+//         let dropShadowColor = `rgba(0, 0, 0, 0.3)`
+//         if(item.getAttribute('data-filter-color') !== null) {
+//             dropShadowColor = item.getAttribute('data-filter-color')
+//         }
+//         item.classList.remove('animated');
+//         item.querySelector('.inner-card').style.transform = `rotateY(0deg) rotateX(0deg) scale(1)`;
+//         item.querySelector('.inner-card-backface').style.transform = `rotateY(0deg) rotateX(0deg) scale(1.01) translateZ(-4px)`;
+//         item.querySelector('.inner-card').style.filter = `drop-shadow(0 10px 15px ${dropShadowColor})`;
+//     });
+// })
 
   useEffect(() => {
     // GET request using axios inside useEffect React hook
@@ -143,21 +144,27 @@ document.querySelectorAll('.card3').forEach(function(item) {
           >
             <section style={{height:'fit-content', flexDirection:'column', margin:'30px'}} ref={scrollToref}>
               <h1>Our Progress</h1>
-              <Layout col="3" style={{background:'rgba(0,0,0,0.4)', height:'fit-content', padding:'50px 0px', borderRadius:'50px'}}>
-                <CastleCard name={item[0].name} bg={item[0].bg} icon={item[0].icon} description={item[0].description} progress={nathria2} world={nathria.world} region={nathria.region} realm={nathria.realm}/>
-                <CastleCard name={item[4].name} bg={item[4].bg} icon={item[4].icon} description={item[4].description} progress={sepulcher2} world={sepulcher.world} region={sepulcher.region} realm={sepulcher.realm}/>
-                <CastleCard name={item[2].name} bg={item[2].bg} icon={item[2].icon} description={item[2].description} progress={sanctum2} world={sanctum.world} region={sanctum.region} realm={sanctum.realm}/>
-                {/* <CastleCard name={item[1].name} bg={item[1].bg} icon={item[1].icon} description={item[1].description} progress={fatednathria2} world={fatednathria.world} region={fatednathria.region} realm={fatednathria.realm}/> */}
-                {/* <CastleCard name={item[3].name} bg={item[3].bg} icon={item[3].icon} description={item[3].description} progress={fatedsanctum2} world={fatedsanctum.world} region={fatedsanctum.region} realm={fatedsanctum.realm}/> */}
-                {/* <CastleCard name={item[5].name} bg={item[5].bg} icon={item[5].icon} description={item[5].description} progress={fatedsepulcher2} world={fatedsepulcher.world} region={fatedsepulcher.region} realm={fatedsepulcher.realm}/> */}
+              <Layout col="1" style={{background:'rgba(0,0,0,0.4)', height:'fit-content', borderRadius:'50px'}}>
+                <ScrollContainer className="scroll-container" hideScrollbars={false} vertical={false}>
+                    <CastleCard name={item[0].name} bg={item[0].bg} icon={item[0].icon} description={item[0].description} progress={nathria2} world={nathria.world} region={nathria.region} realm={nathria.realm}/>
+                    <CastleCard name={item[4].name} bg={item[4].bg} icon={item[4].icon} description={item[4].description} progress={sepulcher2} world={sepulcher.world} region={sepulcher.region} realm={sepulcher.realm}/>
+                    <CastleCard name={item[2].name} bg={item[2].bg} icon={item[2].icon} description={item[2].description} progress={sanctum2} world={sanctum.world} region={sanctum.region} realm={sanctum.realm}/>
+                    <CastleCard name={item[0].name} bg={item[0].bg} icon={item[0].icon} description={item[0].description} progress={nathria2} world={nathria.world} region={nathria.region} realm={nathria.realm}/>
+                    <CastleCard name={item[4].name} bg={item[4].bg} icon={item[4].icon} description={item[4].description} progress={sepulcher2} world={sepulcher.world} region={sepulcher.region} realm={sepulcher.realm}/>
+                    <CastleCard name={item[2].name} bg={item[2].bg} icon={item[2].icon} description={item[2].description} progress={sanctum2} world={sanctum.world} region={sanctum.region} realm={sanctum.realm}/>
+                    {/* <CastleCard name={item[1].name} bg={item[1].bg} icon={item[1].icon} description={item[1].description} progress={fatednathria2} world={fatednathria.world} region={fatednathria.region} realm={fatednathria.realm}/> */}
+                    {/* <CastleCard name={item[3].name} bg={item[3].bg} icon={item[3].icon} description={item[3].description} progress={fatedsanctum2} world={fatedsanctum.world} region={fatedsanctum.region} realm={fatedsanctum.realm}/> */}
+                    {/* <CastleCard name={item[5].name} bg={item[5].bg} icon={item[5].icon} description={item[5].description} progress={fatedsepulcher2} world={fatedsepulcher.world} region={fatedsepulcher.region} realm={fatedsepulcher.realm}/> */}
+                </ScrollContainer>
               </Layout>
+              
             </section>
             <Layout col="1">
               <section className="goals" id="goals" style={{height:'fit-content', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
                 <h1 style={{textAlign:'center'}}>
                   Our Goals
                 </h1>
-                <div className="card3 user" style={{height:'fit-content', width:'100%'}}>
+                <div className="card2 user" style={{height:'fit-content', width:'100%'}}>
                   <span className="inner-card-backface" style={{background:'transparent'}}>
                     <span className="flip-inner-card">
                     </span>
