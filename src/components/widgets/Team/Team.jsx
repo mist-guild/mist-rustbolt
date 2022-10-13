@@ -5,8 +5,17 @@ import logo from './logo.png';
 import './Team.css';
 export default ({ data = [] }) => {
 
-  const officerList = data.map((item, index) => (
-      item.officer?
+  const tankList = data.map((item, index) => (
+    item.tank?
+      <article key={index} style={{flexBasis: 'calc(25% - 3rem)', minWidth:'200px'}}>
+        <CardImage image={item.class} label={logo} user={item.user} item={item} discord={item.discord}>
+        </CardImage>
+      </article>
+    : null
+  ));
+
+  const healerList = data.map((item, index) => (
+      item.healer?
         <article key={index} style={{flexBasis: 'calc(25% - 3rem)', minWidth:'200px'}}>
           <CardImage image={item.class} label={logo} user={item.user} item={item} discord={item.discord}>
           </CardImage>
@@ -14,13 +23,22 @@ export default ({ data = [] }) => {
       : null
   ));
 
-  const teamList = data.map((item, index) => (
-    !item.officer?
-        <article key={index} style={{flexBasis: 'calc(25% - 3rem)', minWidth:'200px'}}>
-          <CardImage image={item.class} label={logo} user={item.user} item={item} discord={item.discord}>
-          </CardImage>
-        </article>
-      : null
+  const mdpsList = data.map((item, index) => (
+    item.mdps?
+      <article key={index} style={{flexBasis: 'calc(25% - 3rem)', minWidth:'200px'}}>
+        <CardImage image={item.class} label={logo} user={item.user} item={item} discord={item.discord}>
+        </CardImage>
+      </article>
+    : null
+  ));
+
+  const rdpsList = data.map((item, index) => (
+    item.rdps?
+      <article key={index} style={{flexBasis: 'calc(25% - 3rem)', minWidth:'200px'}}>
+        <CardImage image={item.class} label={logo} user={item.user} item={item} discord={item.discord}>
+        </CardImage>
+      </article>
+    : null
   ));
 
   return (
@@ -33,15 +51,27 @@ export default ({ data = [] }) => {
     >
       <div style={{display:'flex', flexDirection:'column', gap:'50px'}}>
         <div>
-          <h1> Officers </h1>
+          <h1> Tanks </h1>
           <div style={{display:'flex', gap:'20px', flexWrap:'wrap', justifyContent:'center'}}>
-            {officerList}
+            {tankList}
           </div>
         </div>
         <div>
-          <h1> Raiders </h1>
+          <h1> Healers </h1>
           <div style={{display:'flex', gap:'20px', flexWrap:'wrap', justifyContent:'center'}}>
-            {teamList}
+            {healerList}
+          </div>
+        </div>
+        <div>
+          <h1> Melee </h1>
+          <div style={{display:'flex', gap:'20px', flexWrap:'wrap', justifyContent:'center'}}>
+            {mdpsList}
+          </div>
+        </div>
+        <div>
+          <h1> Ranged </h1>
+          <div style={{display:'flex', gap:'20px', flexWrap:'wrap', justifyContent:'center'}}>
+            {rdpsList}
           </div>
         </div>
       </div>

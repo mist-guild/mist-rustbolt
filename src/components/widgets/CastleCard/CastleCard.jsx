@@ -11,12 +11,15 @@ export default (props) => {
       <span className="inner-card" style={{background:'transparent', width:'80%', overflow:'visible'}}>
         <div className="clash-card barbarian">
           <div className="clash-card__image clash-card__image--barbarian" style={props.bg!==''?{backgroundImage: "url(" + props.bg + ")"}: {}}>
-            <img src={props.icon} alt="barbarian" height='90%' />
+            <img src={props.icon} height='90%' />
           </div>
           <div className="clash-card__level clash-card__level--barbarian" style={{fontSize:'16px'}}>{props.progress}</div>
           <div className="clash-card__unit-name" style={{fontSize:'26px'}}>{props.name}</div>
-          <div className="clash-card__unit-description" style={{fontSize:'10px', letterSpacing:'unset', fontWeight:'unset', lineHeight:'unset'}}>
+          <div className="clash-card__unit-description" style={{fontSize:'15px', letterSpacing:'unset', fontWeight:'unset', lineHeight:'unset'}}>
             {props.description}
+            <a href={props.link}>
+              Click here
+            </a>
           </div>
           <div className="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
             <div className="one-third">
