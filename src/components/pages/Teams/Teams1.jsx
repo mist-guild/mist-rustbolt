@@ -146,9 +146,9 @@ document.querySelectorAll('.card3').forEach(function(item) {
             <section style={{height:'fit-content', flexDirection:'column', margin:'30px'}} ref={scrollToref}>
               <h1>Our Progress</h1>
               <Layout col="3" style={{background:'rgba(0,0,0,0.4)', height:'fit-content', padding:'50px 0px', borderRadius:'50px'}}>
-                <CastleCard name={item[0].name} bg={item[0].bg} icon={item[0].icon} description={item[0].description} progress={nathria2} world={nathria.world} region={nathria.region} realm={nathria.realm}/>
-                <CastleCard name={item[4].name} bg={item[4].bg} icon={item[4].icon} description={item[4].description} progress={sepulcher2} world={sepulcher.world} region={sepulcher.region} realm={sepulcher.realm}/>
-                <CastleCard name={item[2].name} bg={item[2].bg} icon={item[2].icon} description={item[2].description} progress={sanctum2} world={sanctum.world} region={sanctum.region} realm={sanctum.realm}/>
+                <CastleCard name={item[0].name} bg={item[0].bg} icon={item[0].icon} description={item[0].description} link={item[0].link} progress={nathria2} world={nathria.world} region={nathria.region} realm={nathria.realm}/>
+                <CastleCard name={item[4].name} bg={item[4].bg} icon={item[4].icon} description={item[4].description} link={item[4].link} progress={sepulcher2} world={sepulcher.world} region={sepulcher.region} realm={sepulcher.realm}/>
+                <CastleCard name={item[2].name} bg={item[2].bg} icon={item[2].icon} description={item[2].description} link={item[2].link} progress={sanctum2} world={sanctum.world} region={sanctum.region} realm={sanctum.realm}/>
                 {/* <CastleCard name={item[1].name} bg={item[1].bg} icon={item[1].icon} description={item[1].description} progress={fatednathria2} world={fatednathria.world} region={fatednathria.region} realm={fatednathria.realm}/> */}
                 {/* <CastleCard name={item[3].name} bg={item[3].bg} icon={item[3].icon} description={item[3].description} progress={fatedsanctum2} world={fatedsanctum.world} region={fatedsanctum.region} realm={fatedsanctum.realm}/> */}
                 {/* <CastleCard name={item[5].name} bg={item[5].bg} icon={item[5].icon} description={item[5].description} progress={fatedsepulcher2} world={fatedsepulcher.world} region={fatedsepulcher.region} realm={fatedsepulcher.realm}/> */}
