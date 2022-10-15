@@ -238,22 +238,31 @@ export default () => {
               }}
             >
               <Button
-                click={() => actions.toogleModal()}
-                hoverType="solid-white-tb"
-              >
-                RAIDER.IO
-              </Button>
-              <Button
-                click={() => actions.toogleModal()}
+                click={(e) => {
+                  e.preventDefault();
+                  window.location.href='https://www.wowprogress.com/guild/us/illidan/mist';
+                }}
                 hoverType="solid-white-tb"
               >
                 WOW PROGRESS
               </Button>
               <Button
-                click={() => actions.toogleModal()}
+                click={(e) => {
+                  e.preventDefault();
+                  window.location.href='https://raider.io/guilds/us/illidan/Mist';
+                }}
                 hoverType="solid-white-tb"
               >
-                Place Holder
+                RAIDER.IO
+              </Button>
+              <Button
+                click={(e) => {
+                  e.preventDefault();
+                  window.location.href='https://www.warcraftlogs.com/guild/us/illidan/mist';
+                }}
+                hoverType="solid-white-tb"
+              >
+                WARCRAFTLOGS
               </Button>
             </div>
           </div>

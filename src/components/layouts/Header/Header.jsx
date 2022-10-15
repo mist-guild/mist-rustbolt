@@ -58,13 +58,13 @@ export default ({ data = [] }) => {
         <ul className={styles.menu}>{menu}</ul>
 
         <div className={styles.btn_desktop}>
-          <a href="" className={styles.btn}>
+          <a href="https://twitter.com/MistGuild" className={styles.btn}>
             <i className="lab la-twitter" />
           </a>
-          <a href="" className={styles.btn}>
+          <a href="https://twitter.com/MistGuild" className={styles.btn}>
             <i className="lab la-youtube" />
           </a>
-          <a href="" className={styles.btn}>
+          <a href="https://discord.gg/bBsSgK24Kf" className={styles.btn}>
             <i className="lab la-discord" />
           </a>
         </div>
