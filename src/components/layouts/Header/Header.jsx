@@ -59,16 +59,16 @@ export default ({ data = [] }) => {
 
         <div className={styles.btn_desktop}>
           <a href="" className={styles.btn}>
-            <i className="lab la-twitter"/>
+            <i className="lab la-twitter" />
           </a>
           <a href="" className={styles.btn}>
-            <i className="lab la-youtube"/>
+            <i className="lab la-youtube" />
           </a>
           <a href="" className={styles.btn}>
-            <i className="lab la-discord"/>
+            <i className="lab la-discord" />
           </a>
         </div>
-        
+
 
         <div
           className={styles.btn_mobile}

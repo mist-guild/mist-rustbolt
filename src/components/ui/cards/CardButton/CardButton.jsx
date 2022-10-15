@@ -32,10 +32,10 @@ export default ({
           btn_align === "left"
             ? "flex-start"
             : btn_align === "right"
-            ? "flex-end"
-            : btn_align === "center"
-            ? "center"
-            : "stretch",
+              ? "flex-end"
+              : btn_align === "center"
+                ? "center"
+                : "stretch",
         paddingBottom: !padding && "3rem",
       }}
     >

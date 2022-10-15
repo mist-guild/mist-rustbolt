@@ -22,7 +22,7 @@ export default () => {
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime debitis numquam recusandae inventore mollitia sapiente doloremque quas quam doloribus pariatur.
           </p>
           <div className={styles.social}>
-            <a href="#"><i className="lab la-twitter"/></a>
+            <a href="#"><i className="lab la-twitter" /></a>
             <a href="#"><i className="lab la-youtube" /></a>
             <a href="#"><i className="lab la-discord" /></a>
           </div>

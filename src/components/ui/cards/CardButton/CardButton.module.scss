@@ -4,13 +4,13 @@
   flex-direction: column;
   justify-content: space-between;
 
-  & > *:last-child {
+  &>*:last-child {
     margin-top: 3rem;
   }
 }
 
 @media (max-width: 576px) {
-  .card_button > *:last-child {
+  .card_button>*:last-child {
     margin-top: 2rem;
   }
 }

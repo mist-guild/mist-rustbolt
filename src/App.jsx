@@ -1,5 +1,5 @@
 import React, { useEffect, Fragment } from "react";
-import { Switch, Route, Redirect} from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 import {
   Home,
@@ -23,19 +23,19 @@ export default () => {
 
   if (state.data) {
     app = (
-        <Fragment>
-          <Sidebar data={state.data.menu} />
-          <ModalForm />
-          <Header data={state.data.menu} />
-          <Switch>
-            <Route path="/home" exact component={Home} />
-            <Route path="/apply" exact component={Apply} />
-            <Route path="/teams/windbridge" exact component={Teams1} />
-            <Route path="/teams/clear-comms" exact component={Teams2} />
-            <Redirect to="/home" />
-          </Switch>
-          <Footer />
-        </Fragment>
+      <Fragment>
+        <Sidebar data={state.data.menu} />
+        <ModalForm />
+        <Header data={state.data.menu} />
+        <Switch>
+          <Route path="/home" exact component={Home} />
+          <Route path="/apply" exact component={Apply} />
+          <Route path="/teams/windbridge" exact component={Teams1} />
+          <Route path="/teams/clear-comms" exact component={Teams2} />
+          <Redirect to="/home" />
+        </Switch>
+        <Footer />
+      </Fragment>
     );
   }
 

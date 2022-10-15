@@ -19,10 +19,10 @@ export default ({ style, children, mode, col, padding, blur }) => {
             col === "2"
               ? styles.col_2
               : col === "3"
-              ? styles.col_3
-              : col === "4"
-              ? styles.col_4
-              : null
+                ? styles.col_3
+                : col === "4"
+                  ? styles.col_4
+                  : null
           ].join(" ")}
         >
           {children}

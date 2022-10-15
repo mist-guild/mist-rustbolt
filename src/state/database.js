@@ -178,7 +178,7 @@ const database = {
     {
       name: "Sanctum of Domination",
       bg: 'https://render.worldofwarcraft.com/us/zones/sanctum-of-domination-small.jpg',
-      description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis ratione commodi sint illo facere id dolore repudiandae, ex dignissimos molestiae voluptatum, totam quia? Laborum dolore modi voluptatibus alias fugit perferendis.",
+      description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis ratione commodi sint illo facere id dolore repudiandae, ex dignissimos molestiae voluptatum, totam quia? Laborum dolore modi voluptatibus alias fugit perferendis.",
       link: "https://www.youtube.com/watch?v=wawBZZvizLQ&ab_channel=DonkeystormGaming",
     },
     {
@@ -203,7 +203,7 @@ const database = {
       bg: 'https://raw.githubusercontent.com/zakpruitt/mist-website/master/src/assets/df_render_1.png',
       link: "/teams/windbridge",
       TimeRanges: [
-        { 
+        {
           time: 'TUESDAY: 9PM-12AM CST'
         },
         {
@@ -224,7 +224,7 @@ const database = {
       bg: 'https://wallpapercave.com/wp/wp10407651.jpg',
       link: "/teams/clear-comms",
       TimeRanges: [
-        { 
+        {
           time: 'MONDAY: 10PM-1AM CST'
         },
         {
@@ -234,7 +234,7 @@ const database = {
           time: 'THURSDAY: 10PM-1AM CST'
         }
       ],
-      
+
     },
   ],
   members1: [

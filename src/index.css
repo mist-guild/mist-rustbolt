@@ -67,7 +67,7 @@ h4 {
   letter-spacing: 1px;
 }
 
-button{
+button {
   display: flex;
   flex-shrink: 0;
   align-items: center;
@@ -88,7 +88,7 @@ button{
   border-color: rgb(34, 50, 97);
 }
 
-button:hover{
+button:hover {
   color: black;
   background: #fff;
   border: 2px solid #fff;
@@ -102,6 +102,7 @@ button:hover{
   text-align: center;
 
 }
+
 .layout-header p {
   margin-bottom: 2rem;
   max-width: 600px;
@@ -121,15 +122,15 @@ textarea {
 }
 
 @media (max-width: 576px) {
-.layout-header .subtitle {
-  margin-bottom: 15px;
-}
+  .layout-header .subtitle {
+    margin-bottom: 15px;
+  }
 
-.layout-header .title {
-  margin-bottom: 20px;
-}
+  .layout-header .title {
+    margin-bottom: 20px;
+  }
 
-.layout-header .parargraph {
-  margin-bottom: 5px;
-}
+  .layout-header .parargraph {
+    margin-bottom: 5px;
+  }
 }

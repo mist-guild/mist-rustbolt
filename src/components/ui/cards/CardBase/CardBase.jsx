@@ -14,16 +14,16 @@ export default ({ children, animation, padding, background, dark }) => (
         animation === "slide-right"
           ? styles.slide_right
           : animation === "slide-left"
-          ? styles.slide_left
-          : animation === "slide-top"
-          ? styles.slide_top
-          : animation === "slide-bottom"
-          ? styles.slide_bottom
-          : animation === "fade"
-          ? styles.fade
-          : animation === "scale"
-          ? styles.scale
-          : null,
+            ? styles.slide_left
+            : animation === "slide-top"
+              ? styles.slide_top
+              : animation === "slide-bottom"
+                ? styles.slide_bottom
+                : animation === "fade"
+                  ? styles.fade
+                  : animation === "scale"
+                    ? styles.scale
+                    : null,
       ].join(" ")}
       style={{ background: THEME.color }}
     />
