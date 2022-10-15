@@ -166,37 +166,30 @@ const database = {
   ],
   castles: [
     {
-      name: "Castle Nathria",
-      bg: 'https://wow.zamimg.com/uploads/guide/seo/10246.jpg?1588896674',
-      description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis ratione commodi sint illo facere id dolore repudiandae, ex dignissimos molestiae voluptatum, totam quia? Laborum dolore modi voluptatibus alias fugit perferendis.",
+      name: "Vault of the Incarnates",
+      bg: 'https://raw.githubusercontent.com/zakpruitt/mist-website/master/public/voi.png',
       link: "https://www.youtube.com/watch?v=wawBZZvizLQ&ab_channel=DonkeystormGaming",
     },
     {
-      name: "Fated Castle Nathria",
-      bg: 'https://wow.zamimg.com/uploads/guide/seo/10246.jpg?1588896674',
-      description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis ratione commodi sint illo facere id dolore repudiandae, ex dignissimos molestiae voluptatum, totam quia? Laborum dolore modi voluptatibus alias fugit perferendis.",
+      name: "Sepulcher of the First Ones",
+      bg: 'https://i.ibb.co/r00qjBS/sepulcher-of-the-first-ones-social-h.jpg',
+      link: "https://www.youtube.com/watch?v=wawBZZvizLQ&ab_channel=DonkeystormGaming",
     },
     {
-      name: "Sanctum of Domination ",
+      name: "Sanctum of Domination",
       bg: 'https://render.worldofwarcraft.com/us/zones/sanctum-of-domination-small.jpg',
       description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis ratione commodi sint illo facere id dolore repudiandae, ex dignissimos molestiae voluptatum, totam quia? Laborum dolore modi voluptatibus alias fugit perferendis.",
       link: "https://www.youtube.com/watch?v=wawBZZvizLQ&ab_channel=DonkeystormGaming",
     },
     {
-      name: "Fated Sanctum of Domination ",
-      bg: 'https://cdn1.dotesports.com/wp-content/uploads/2020/12/10013745/gargoyle.jpg',
-      description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis ratione commodi sint illo facere id dolore",
-    },
-    {
-      name: "Sepulcher of the First Ones",
-      bg: 'https://i.ibb.co/r00qjBS/sepulcher-of-the-first-ones-social-h.jpg',
-      description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis ratione commodi sint illo facere id dolore repudiandae, ex dignissimos molestiae voluptatum, totam quia? Laborum dolore modi voluptatibus alias fugit perferendis.",
+      name: "Castle Nathria",
+      bg: 'https://wow.zamimg.com/uploads/guide/seo/10246.jpg?1588896674',
       link: "https://www.youtube.com/watch?v=wawBZZvizLQ&ab_channel=DonkeystormGaming",
     },
     {
-      name: "Fated Sepulcher of the First Ones",
-      bg: 'https://i.ibb.co/r00qjBS/sepulcher-of-the-first-ones-social-h.jpg',
-      description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis ratione commodi sint illo facere id dolore",
+      name: "Ny'alotha",
+      bg: 'https://render.worldofwarcraft.com/us/zones/nyalotha-the-waking-city-small.jpg',
+      link: "https://www.youtube.com/watch?v=wawBZZvizLQ&ab_channel=DonkeystormGaming",
     },
   ],
   teams: [

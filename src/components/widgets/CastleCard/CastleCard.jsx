@@ -14,12 +14,12 @@ export default (props) => {
             <img src={props.icon} height='90%' />
           </div>
           <div className="clash-card__level clash-card__level--barbarian" style={{fontSize:'16px'}}>{props.progress}</div>
-          <div className="clash-card__unit-name" style={{fontSize:'26px'}}>{props.name}</div>
+          <div className="clash-card__unit-name" style={{fontSize:'23px'}}>{props.name}</div>
           <div className="clash-card__unit-description" style={{fontSize:'15px', letterSpacing:'unset', fontWeight:'unset', lineHeight:'unset'}}>
-            You can learn more about this raid using the following links:
+            Check out the links below to learn more about Mist's {props.name}
             <div style={{display:'flex', justifyContent:'center', alignItems: 'center', gap:'25%', margin:'0px 0px'}}>
-              <a href="#" style={{color:'rgba(85,26,139,1)', float:'unset', fontSize:'48px', width:'fit-content'}}><i className="lab la-youtube"></i> <div style={{fontSize:'15px', letterSpacing:'unset', fontWeight:'unset', lineHeight:'unset', color:'#9E9E9E'}}>Kill VoD</div></a>
-              <a href="#" style={{color:'rgba(85,26,139,1)', float:'unset', fontSize:'48px', width:'fit-content', padding:'10px 5px'}}> <img src="https://i.ibb.co/nfCw7NX/Asset-1.png" alt="" width='40px'/><div style={{fontSize:'15px', letterSpacing:'unset', fontWeight:'unset', lineHeight:'unset', color:'#9E9E9E', marginTop:'5px'}}>Kill log</div></a>
+              <a href="#" style={{color:'rgba(85,26,139,1)', float:'unset', fontSize:'48px', width:'fit-content', marginTop:"1%"}}><i className="lab la-youtube"></i> <div style={{fontSize:'15px', letterSpacing:'unset', fontWeight:'unset', lineHeight:'unset', color:'#9E9E9E'}}>VoD</div></a>
+              <a href="#" style={{color:'rgba(85,26,139,1)', float:'unset', fontSize:'48px', width:'fit-content', padding:'10px 5px', marginTop:"1%"}}> <img src="https://i.ibb.co/nfCw7NX/Asset-1.png" alt="" width='40px'/><div style={{fontSize:'15px', letterSpacing:'unset', fontWeight:'unset', lineHeight:'unset', color:'#9E9E9E', marginTop:'5px'}}>Log</div></a>
             </div>
           </div>
           <div className="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">

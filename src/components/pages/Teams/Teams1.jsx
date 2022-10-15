@@ -18,16 +18,10 @@ export default ({ data = [] }) => {
   const [mistProgress, fetchData2] = useState([]);
   const [nathria, setNathria] = useState([]);
   const [nathria2, setNathria2] = useState([]);
-  // const [fatednathria, setFatedNathria] = useState([]);
-  // const [fatednathria2, setFatedNathria2] = useState([]);
   const [sanctum, setSanctum] = useState([]);
   const [sanctum2, setSanctum2] = useState([]);
-  // const [fatedsanctum, setFatedSanctum] = useState([]);
-  // const [fatedsanctum2, setFatedSanctum2] = useState([]);
   const [sepulcher, setsepulcher] = useState([]);
   const [sepulcher2, setsepulcher2] = useState([]);
-  // const [fatedsepulcher, setFatedSepulcher] = useState([]);
-  // const [fatedsepulcher2, setFatedSepulcher2] = useState([]);
 
 
   let calculateAngle = function(e, item, parent) {
@@ -111,21 +105,15 @@ document.querySelectorAll('.card2').forEach(function(item) {
         .then(response => {
           fetchData(response.data);
           setNathria(response.data.raid_rankings["castle-nathria"].mythic);
-          // setFatedNathria(response.data.raid_rankings["fated-castle-nathria"].mythic);
           setSanctum(response.data.raid_rankings["sanctum-of-domination"].mythic);
-          // setFatedSanctum(response.data.raid_rankings["fated-sanctum-of-domination"].mythic);
           setsepulcher(response.data.raid_rankings["sepulcher-of-the-first-ones"].mythic);
-          // setFatedSepulcher(response.data.raid_rankings["fated-sepulcher-of-the-first-ones"].mythic);
         });
     axios.get('https://raider.io/api/v1/guilds/profile?region=us&realm=illidan&name=mist&fields=raid_progression')
       .then(response => {
         fetchData2(response.data);
         setNathria2(response.data.raid_progression["castle-nathria"].summary);
-        // setFatedNathria2(response.data.raid_progression["fated-castle-nathria"].summary);
         setSanctum2(response.data.raid_progression["sanctum-of-domination"].summary);
-        // setFatedSanctum2(response.data.raid_progression["fated-sanctum-of-domination"].summary);
         setsepulcher2(response.data.raid_progression["sepulcher-of-the-first-ones"].summary);
-        // setFatedSepulcher2(response.data.raid_progression["fated-sepulcher-of-the-first-ones"].summary);
       });
 // empty dependency array means this effect will only run once (like componentDidMount in classes)
 }, []);
@@ -148,15 +136,11 @@ document.querySelectorAll('.card2').forEach(function(item) {
               <h1>Our Progress</h1>
               <Layout col="1" style={{background:'rgba(0,0,0,0.4)', height:'fit-content', borderRadius:'50px'}}>
                 <ScrollContainer className="scroll-container" hideScrollbars={false} vertical={false}>
-                    <CastleCard name={item[0].name} bg={item[0].bg} icon={item[0].icon} description={item[0].description} progress={nathria2} world={nathria.world} region={nathria.region} realm={nathria.realm}/>
-                    <CastleCard name={item[4].name} bg={item[4].bg} icon={item[4].icon} description={item[4].description} progress={sepulcher2} world={sepulcher.world} region={sepulcher.region} realm={sepulcher.realm}/>
+                    <CastleCard name={item[0].name} bg={item[0].bg} icon={item[0].icon} description={item[0].description} progress="0/8 M" world="" region="" realm=""/>
+                    <CastleCard name={item[1].name} bg={item[1].bg} icon={item[1].icon} description={item[1].description} progress={sepulcher2} world={sepulcher.world} region={sepulcher.region} realm={sepulcher.realm}/>
                     <CastleCard name={item[2].name} bg={item[2].bg} icon={item[2].icon} description={item[2].description} progress={sanctum2} world={sanctum.world} region={sanctum.region} realm={sanctum.realm}/>
-                    <CastleCard name={item[0].name} bg={item[0].bg} icon={item[0].icon} description={item[0].description} progress={nathria2} world={nathria.world} region={nathria.region} realm={nathria.realm}/>
-                    <CastleCard name={item[4].name} bg={item[4].bg} icon={item[4].icon} description={item[4].description} progress={sepulcher2} world={sepulcher.world} region={sepulcher.region} realm={sepulcher.realm}/>
-                    <CastleCard name={item[2].name} bg={item[2].bg} icon={item[2].icon} description={item[2].description} progress={sanctum2} world={sanctum.world} region={sanctum.region} realm={sanctum.realm}/>
-                    {/* <CastleCard name={item[1].name} bg={item[1].bg} icon={item[1].icon} description={item[1].description} progress={fatednathria2} world={fatednathria.world} region={fatednathria.region} realm={fatednathria.realm}/> */}
-                    {/* <CastleCard name={item[3].name} bg={item[3].bg} icon={item[3].icon} description={item[3].description} progress={fatedsanctum2} world={fatedsanctum.world} region={fatedsanctum.region} realm={fatedsanctum.realm}/> */}
-                    {/* <CastleCard name={item[5].name} bg={item[5].bg} icon={item[5].icon} description={item[5].description} progress={fatedsepulcher2} world={fatedsepulcher.world} region={fatedsepulcher.region} realm={fatedsepulcher.realm}/> */}
+                    <CastleCard name={item[3].name} bg={item[3].bg} icon={item[3].icon} description={item[3].description} progress="10/10 M" world="1" region="1" realm="1"/>
+                    <CastleCard name={item[4].name} bg={item[4].bg} icon={item[4].icon} description={item[4].description} progress="12/12 M" world="1" region="1" realm="1"/>
                 </ScrollContainer>
               </Layout>
             </section>

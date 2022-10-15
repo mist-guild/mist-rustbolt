@@ -12,6 +12,33 @@
   }
 }
 
+.btn_contacts{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.btn{
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border: 2px solid #fff;
+  background: rgb(34, 50, 97);
+  border-color: rgb(34, 50, 97);
+  color: rgb(255, 255, 255);
+  padding: 1.5rem;
+  font-size: 20px;
+  border-radius: 50%;
+}
+
 .sidebar {
   position: relative;
   display: flex;
