@@ -1,43 +1,89 @@
-.apply-form{
+.form-group .user-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  width: 10%;
+  height: 67px;
+  box-shadow: 0 4px 9px rgb(0 0 0 / 20%);
+  margin-left: 50px;
+  min-width: 67px;
+}
+
+.form-group .user-icon img {
+  width: 75%;
+
+  transform: scale(1);
+  transition: all 0.1s ease-out;
+}
+
+.form-p {
+  margin: 0 0 10px 0 !important;
+  font-size: 1vh;
+  color: white !important;
+}
+
+.form-group .user-icon img:hover {
+  transform: scale(1.08);
+}
+
+.apply-form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.form-label{
+
+.form-label {
   /* background: -webkit-linear-gradient(90deg, rgba(255,255,255,1) 5%, rgba(98,200,232,1) 39%, rgba(255,255,255,1) 95%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
   color: white;
   font-family: "Poppins";
   display: inline-block;
-  margin-bottom: 30px;
+  margin: 30px 0px;
 }
-.form-control:focus, .form-control:active{
+
+.form-control:focus,
+.form-control:active {
   background-color: #223261;
   color: #62C8E8;
 }
-.btn-primary{
+
+.btn-primary {
   width: 250px !important;
   text-transform: uppercase;
   cursor: pointer !important;
 }
-.form-select{
+
+.form-select {
   cursor: default !important;
 }
-@media screen and (max-width: 768px){
-  .apply-form{
+
+@media screen and (max-width: 768px) {
+  .user-icon {
+    margin-left: 10px;
+    min-width: 50px;
+    height: 50px;
+  }
+
+  .apply-form {
     width: 100% !important;
   }
-  .form-label{
+
+  .form-label {
     font-size: 16px;
     margin-bottom: 10px;
   }
-  .form-control{
+
+  .form-control {
     font-size: 12px;
   }
 }
-.form-control, .form-select, .btn-primary{
+
+.form-control,
+.form-select,
+.btn-primary {
   position: relative;
   width: 100%;
   margin: 0 0 50px;
@@ -46,7 +92,7 @@
   font-size: 15px;
   font-weight: inherit;
   line-height: calc(63px - (48px - 2px));
-  clip-path: polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px));
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
   color: white;
   border: 1px solid #62C8E8;
   background-color: #223261;
@@ -62,6 +108,11 @@
   -webkit-filter: drop-shadow(0 3px 7px rgba(14, 8, 18, .44));
   filter: drop-shadow(0 3px 7px rgba(14, 8, 18, .44));
 }
-.form-group{
+
+.form-group {
   width: 80%;
+}
+
+.form-control {
+  margin: 0px;
 }

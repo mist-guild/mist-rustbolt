@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef} from "react";
+import React, { cloneElement, Fragment, useEffect, useRef } from "react";
 import {
   Slider3,
 } from "../../widgets";
@@ -11,14 +11,14 @@ import { gsap } from "gsap";;
 
 export default ({ data = [] }) => {
   //gsap init
-  gsap.defaults({ease: "none"});
+  gsap.defaults({ ease: "none" });
   const state = useCustomState()[0];
 
   //card animation
-  let calculateAngle = function(e, item, parent) {
+  let calculateAngle = function (e, item, parent) {
     let dropShadowColor = `rgba(0, 0, 0, 0.3)`
-    if(parent.getAttribute('data-filter-color') !== null) {
-        dropShadowColor = parent.getAttribute('data-filter-color');
+    if (parent.getAttribute('data-filter-color') !== null) {
+      dropShadowColor = parent.getAttribute('data-filter-color');
     }
 
     parent.classList.add('animated');
@@ -28,17 +28,17 @@ export default ({ data = [] }) => {
     let y = Math.abs(item.getBoundingClientRect().y - e.clientY);
 
     // Calculate half the width and height
-    let halfWidth  = item.getBoundingClientRect().width / 2;
+    let halfWidth = item.getBoundingClientRect().width / 2;
     let halfHeight = item.getBoundingClientRect().height / 2;
 
     // Use this to create an angle. I have divided by 6 and 4 respectively so the effect looks good.
     // Changing these numbers will change the depth of the effect.
     let calcAngleX = (x - halfWidth) / 36;
     let calcAngleY = (y - halfHeight) / 34;
-  
+
     let gX = (1 - (x / (halfWidth * 2))) * 100;
     let gY = (1 - (y / (halfHeight * 2))) * 100;
-  
+
     item.querySelector('.glare').style.background = `radial-gradient(circle at ${gX}% ${gY}%, rgb(199 198 243), transparent)`;
     // And set its container's perspective.
     parent.style.perspective = `${halfWidth * 6}px`
@@ -47,168 +47,246 @@ export default ({ data = [] }) => {
     // Set the items transform CSS property
     item.style.transform = `rotateY(${calcAngleX}deg) rotateX(${-calcAngleY}deg) scale(1.04)`;
     parent.querySelector('.inner-card-backface').style.transform = `rotateY(${calcAngleX}deg) rotateX(${-calcAngleY}deg) scale(1.04) translateZ(-4px)`;
-  
-    if(parent.getAttribute('data-custom-perspective') !== null) {
-        parent.style.perspective = `${parent.getAttribute('data-custom-perspective')}`
+
+    if (parent.getAttribute('data-custom-perspective') !== null) {
+      parent.style.perspective = `${parent.getAttribute('data-custom-perspective')}`
     }
 
     // Reapply this to the shadow, with different dividers
     let calcShadowX = (x - halfWidth) / 3;
     let calcShadowY = (y - halfHeight) / 6;
-    
+
     // Add a filter shadow - this is more performant to animate than a regular box shadow.
     item.style.filter = `drop-shadow(${-calcShadowX}px ${-calcShadowY}px 15px ${dropShadowColor})`;
   }
-  document.querySelectorAll('.card2').forEach(function(item) {
-      if(item.querySelector('.flip') !== null) {
-        item.querySelector('.flip').addEventListener('click', function() {
-          item.classList.add('flipped');
-        });
-      }
-      if(item.querySelector('.unflip') !== null) {
-        item.querySelector('.unflip').addEventListener('click', function() {
-          item.classList.remove('flipped');
-        });
-      }
-      item.addEventListener('mouseenter', function(e) {
-          calculateAngle(e, this.querySelector('.inner-card'), this);
+  document.querySelectorAll('.card2').forEach(function (item) {
+    if (item.querySelector('.flip') !== null) {
+      item.querySelector('.flip').addEventListener('click', function () {
+        item.classList.add('flipped');
       });
+    }
+    if (item.querySelector('.unflip') !== null) {
+      item.querySelector('.unflip').addEventListener('click', function () {
+        item.classList.remove('flipped');
+      });
+    }
+    item.addEventListener('mouseenter', function (e) {
+      calculateAngle(e, this.querySelector('.inner-card'), this);
+    });
 
-      item.addEventListener('mousemove', function(e) {
-          calculateAngle(e, this.querySelector('.inner-card'), this);
-      });
+    item.addEventListener('mousemove', function (e) {
+      calculateAngle(e, this.querySelector('.inner-card'), this);
+    });
 
-      item.addEventListener('mouseleave', function(e) {
-          let dropShadowColor = `rgba(0, 0, 0, 0.3)`
-          if(item.getAttribute('data-filter-color') !== null) {
-              dropShadowColor = item.getAttribute('data-filter-color')
-          }
-          item.classList.remove('animated');
-          item.querySelector('.inner-card').style.transform = `rotateY(0deg) rotateX(0deg) scale(1)`;
-          item.querySelector('.inner-card-backface').style.transform = `rotateY(0deg) rotateX(0deg) scale(1.01) translateZ(-4px)`;
-          item.querySelector('.inner-card').style.filter = `drop-shadow(0 10px 15px ${dropShadowColor})`;
-      });
+    item.addEventListener('mouseleave', function (e) {
+      let dropShadowColor = `rgba(0, 0, 0, 0.3)`
+      if (item.getAttribute('data-filter-color') !== null) {
+        dropShadowColor = item.getAttribute('data-filter-color')
+      }
+      item.classList.remove('animated');
+      item.querySelector('.inner-card').style.transform = `rotateY(0deg) rotateX(0deg) scale(1)`;
+      item.querySelector('.inner-card-backface').style.transform = `rotateY(0deg) rotateX(0deg) scale(1.01) translateZ(-4px)`;
+      item.querySelector('.inner-card').style.filter = `drop-shadow(0 10px 15px ${dropShadowColor})`;
+    });
   })
 
-    //get mouse position
-    const [mousePosition,setMousePosition] = React.useState({ x: null, y: null });
-    useEffect(() => {const updateMousePosition = ev => {setMousePosition({ x: ev.clientX, y: ev.clientY });};window.addEventListener('mousemove', updateMousePosition);return () => {window.removeEventListener('mousemove', updateMousePosition);};}, []);
-    const mouseX = mousePosition.x; const mouseY = mousePosition.y;
-  
-    
-    const scrollToref = useRef(null);
+  //get mouse position
+  const [mousePosition, setMousePosition] = React.useState({ x: null, y: null });
+  useEffect(() => { const updateMousePosition = ev => { setMousePosition({ x: ev.clientX, y: ev.clientY }); }; window.addEventListener('mousemove', updateMousePosition); return () => { window.removeEventListener('mousemove', updateMousePosition); }; }, []);
+  const mouseX = mousePosition.x; const mouseY = mousePosition.y;
 
-    //submit animation
-    const submitButton = useRef();
-    useEffect(() => {gsap.to(submitButton.current, {x: -mouseX/50, y: mouseY/30,});}, [mouseX, mouseY]);
+
+  const scrollToref = useRef(null);
+
+  //submit animation
+  const submitButton = useRef();
+  useEffect(() => { gsap.to(submitButton.current, { x: -mouseX / 50, y: mouseY / 30, }); }, [mouseX, mouseY]);
+
+  const [inputnumbers, setInputNumbers] = React.useState(1);
+
+  async function addInput() {
+    setInputNumbers(inputnumbers + 1);
+    let x = document.getElementById("characterInput" + (inputnumbers));
+    console.log(x);
+    let parent = x?.parentElement;
+    let y = x?.cloneNode();
+    y.id = "characterInput" + (inputnumbers + 1);
+    var cln = x.childNodes[0].cloneNode(true);
+    cln.value = "";
+    cln.name = "character_name" + (inputnumbers + 1);
+    let span = document.createElement("span");
+    span.classList.add("user-icon");
+    y.appendChild(cln);
+    y.appendChild(span);
+    span.style.display = "none";
+    let img = document.createElement("img");
+    span.appendChild(img);
+    cln.addEventListener("blur", async function secondFunction(e) {
+      getvals(e.currentTarget.value).then(response => {
+        if (response.class) {
+          span.style.display = "flex";
+          img.src = require('./icons/' + response.class + '.png');
+        }
+      });
+    });
+    if (x) parent.appendChild(y);
+  }
+
+  function getvals(text) {
+    var name = text.split("-")[0];
+    var realm = text.split("-")[1];
+    return fetch('https://raider.io/api/v1/characters/profile?region=us&realm=' + realm + '&name=' + name + '&fields=mythic_plus_scores',
+      {
+        method: "GET",
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+      })
+      .then((response) => response.json())
+      .then((responseData) => {
+        // console.log(responseData);
+        return responseData;
+      })
+      .catch(error => console.warn(error));
+  }
+
+  const [Users, fetchUsers] = React.useState([]);
+  const getData = async (text, index) => {
+    var name = text.split("-")[0];
+    var realm = text.split("-")[1];
+    Users.splice(index, 1);
+    await fetch('https://raider.io/api/v1/characters/profile?region=us&realm=' + realm + '&name=' + name + '&fields=mythic_plus_scores')
+      .then((res) => res.json())
+      .then((res) => {
+        fetchUsers([...Users, res.class]);
+      })
+      .catch((err) => console.log(err))
+  }
+
+  console.log(Users);
 
   return (
     <Fragment>
-          <Slider3 data={state.data.requirements} scrollto={scrollToref}/>
+      <Slider3 data={state.data.requirements} scrollto={scrollToref} />
 
-          {/* <Team data={state.data.members} /> */}
-          <div
-            className="parallax"
-            style={{
-              backgroundImage: "url(" + state.data.parallax.bg + ")",
-              flexDirection:'column',
-              alignItems:'center',
-            }}
-          >
-            <Layout col="1">
-              <section className="apply" id="apply" style={{height:'fit-content', flexDirection:'column', padding:'100px 0px'}} ref={scrollToref}>
-                {/* <h1 style={{textAlign:'center'}}> Apply Now</h1> */}
-                <Form action="https://mistguild.pythonanywhere.com/applicant" method="POST" className="apply-form" style={{width:'80%', fontSize:'max(2vw, 36px)'}}>
-                  <Form.Group className="form-group mb-3">
-                    <Form.Label>Character Name</Form.Label>
-                    <Form.Control name="character_name" type="text" />
-                  </Form.Group>
-                  <Form.Group className="form-group mb-3">
-                    <Form.Label>Discord Contact</Form.Label>
-                    <Form.Control name="discord_contact" type="text"/>
-                  </Form.Group>
-                  <Form.Group className="form-group mb-3">
-                    <Form.Label>Battlenet Id</Form.Label>
-                    <Form.Control name="battlenet_contact" type="text" />
-                  </Form.Group>
-                  <Form.Group className="form-group mb-3">
-                    <Form.Label>Armory Link</Form.Label>
-                    <Form.Control name="armory_link" type="url" />
-                  </Form.Group>
-                  <Form.Group className="form-group mb-3">
-                    <Form.Label>Age</Form.Label>
-                    <Form.Control name="age" type="number" />
-                  </Form.Group>
-                  <Form.Group className="form-group mb-3">
-                    <Form.Label>Class</Form.Label>
-                    <Form.Select name="wow_class" aria-label="Default select example">
-                      <option value="Warrior">Warrior</option>
-                      <option value="Hunter">Hunter</option>
-                      <option value="Mage">Mage</option>
-                      <option value="Warlock">Warlock</option>
-                      <option value="Druid">Druid</option>
-                      <option value="Monk">Monk</option>
-                      <option value="Priest">Priest</option>
-                      <option value="Paladin">Paladin</option>
-                      <option value="Shaman">Shaman</option>
-                      <option value="Rogue">Rogue</option>
-                      <option value="Demon Hunter">Demon Hunter</option>
-                      <option value="Death Knight">Death Knight</option>
-                      <option value="Evoker">Evoker</option>
-                    </Form.Select>
-                  </Form.Group>
-                  <Form.Group className="form-group mb-3">
-                    <Form.Label>What Raid Team Are You Applying To?</Form.Label>
-                    <Form.Select name="team_choice" aria-label="Default select example">
-                      <option value="Windbridge">Windbridge</option>
-                      <option value="Clear Comms">Clear Comms</option>
-                    </Form.Select>
-                  </Form.Group>
-                  <Form.Group className="form-group mb-3">
-                    <Form.Label>Primary Spec</Form.Label>
-                    <Form.Control name="primary_spec" type="text"/>
-                  </Form.Group>
-                  <Form.Group className="form-group mb-3">
-                    <Form.Label>Raider.io Link</Form.Label>
-                    <Form.Control name="raiderio_link" type="url" />
-                  </Form.Group>
-                  <Form.Group className="form-group mb-3">
-                    <Form.Label>Warcraftlogs Link</Form.Label>
-                    <Form.Control name="warcraftlogs_link" type="url" />
-                  </Form.Group>
-                  <Form.Group className="form-group mb-3" controlId="exampleForm.ControlTextarea1">
-                    <Form.Label>Tell Us About Yourself (Real Life)</Form.Label>
-                    <Form.Control name="real_life_summary" as="textarea" rows={3} />
-                  </Form.Group>
-                  <Form.Group className="form-group mb-3" controlId="exampleForm.ControlTextarea1">
-                    <Form.Label>What experience, skill, and attitude will you bring to the guild?</Form.Label>
-                    <Form.Control name="skills_summary" as="textarea" rows={3} />
-                  </Form.Group>
-                  <Form.Group className="form-group mb-3" controlId="exampleForm.ControlTextarea1">
-                    <Form.Label>How often do you play WoW? We're looking to build a community of people that play the game often, not people who exclusively raid log. </Form.Label>
-                    <Form.Control name="proclivity_summary" as="textarea" rows={3} />
-                  </Form.Group>
-                  <Form.Group className="form-group mb-3">
-                    <Form.Label>Does Pineapple Belong On Pizza?</Form.Label>
-                    <Form.Control name="pizza_question" type="text"/>
-                  </Form.Group>
-                  <Button variant="primary" type="submit" ref={submitButton}>
-                    Submit
-                  </Button>
+      {/* <Team data={state.data.members} /> */}
+      <div
+        className="parallax"
+        style={{
+          backgroundImage: "url(" + state.data.parallax.bg + ")",
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <Layout col="1">
+          <section className="apply" id="apply" style={{ height: 'fit-content', flexDirection: 'column', padding: '100px 0px' }} ref={scrollToref}>
+            {/* <h1 style={{textAlign:'center'}}> Apply Now</h1> */}
+            <Form action="https://mistguild.pythonanywhere.com/applicant" method="POST" className="apply-form" style={{ width: '80%', fontSize: 'max(2vw, 36px)' }}>
+              <Form.Group className="form-group mb-3">
+                <Form.Label>Character Name {Users ? Users.class : null}</Form.Label>
+                <br />
+                <p className="form-p">Please enter your exact character name like so: Spuggies-Illidan. Once the icon appears, your character was found!</p>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '20px' }} id="characterInput1">
+                  <Form.Control name="character_name" type="text" onBlur={(e) => getData(e.target.value, 0)} />
+                  {
+                    Users[0] ?
+                      <span className="user-icon"> <img src={require('./icons/' + Users[0] + '.png')} alt={'Name Change..'} /></span>
+                      :
+                      null
+                  }
+
+                </div>
+              </Form.Group>
+              <button onClick={() => addInput()} type="button">
+                Add Character
+              </button>
+              <Form.Group className="form-group mb-3">
+                <Form.Label>Discord Contact</Form.Label>
+                <Form.Control name="discord_contact" type="text" />
+              </Form.Group>
+              <Form.Group className="form-group mb-3">
+                <Form.Label>Battlenet Id</Form.Label>
+                <Form.Control name="battlenet_contact" type="text" />
+              </Form.Group>
+              <Form.Group className="form-group mb-3">
+                <Form.Label>Armory Link</Form.Label>
+                <Form.Control name="armory_link" type="url" />
+              </Form.Group>
+              <Form.Group className="form-group mb-3">
+                <Form.Label>Age</Form.Label>
+                <Form.Control name="age" type="number" />
+              </Form.Group>
+              <Form.Group className="form-group mb-3">
+                <Form.Label>Class</Form.Label>
+                <Form.Select name="wow_class" aria-label="Default select example">
+                  <option value="Warrior">Warrior</option>
+                  <option value="Hunter">Hunter</option>
+                  <option value="Mage">Mage</option>
+                  <option value="Warlock">Warlock</option>
+                  <option value="Druid">Druid</option>
+                  <option value="Monk">Monk</option>
+                  <option value="Priest">Priest</option>
+                  <option value="Paladin">Paladin</option>
+                  <option value="Shaman">Shaman</option>
+                  <option value="Rogue">Rogue</option>
+                  <option value="Demon Hunter">Demon Hunter</option>
+                  <option value="Death Knight">Death Knight</option>
+                  <option value="Evoker">Evoker</option>
+                </Form.Select>
+              </Form.Group>
+              <Form.Group className="form-group mb-3">
+                <Form.Label>What Raid Team Are You Applying To?</Form.Label>
+                <Form.Select name="team_choice" aria-label="Default select example">
+                  <option value="Windbridge">Windbridge</option>
+                  <option value="Clear Comms">Clear Comms</option>
+                </Form.Select>
+              </Form.Group>
+              <Form.Group className="form-group mb-3">
+                <Form.Label>Primary Spec</Form.Label>
+                <Form.Control name="primary_spec" type="text" />
+              </Form.Group>
+              <Form.Group className="form-group mb-3">
+                <Form.Label>Raider.io Link</Form.Label>
+                <Form.Control name="raiderio_link" type="url" />
+              </Form.Group>
+              <Form.Group className="form-group mb-3">
+                <Form.Label>Warcraftlogs Link</Form.Label>
+                <Form.Control name="warcraftlogs_link" type="url" />
+              </Form.Group>
+              <Form.Group className="form-group mb-3" controlId="exampleForm.ControlTextarea1">
+                <Form.Label>Tell Us About Yourself (Real Life)</Form.Label>
+                <Form.Control name="real_life_summary" as="textarea" rows={3} />
+              </Form.Group>
+              <Form.Group className="form-group mb-3" controlId="exampleForm.ControlTextarea1">
+                <Form.Label>What experience, skill, and attitude will you bring to the guild?</Form.Label>
+                <Form.Control name="skills_summary" as="textarea" rows={3} />
+              </Form.Group>
+              <Form.Group className="form-group mb-3" controlId="exampleForm.ControlTextarea1">
+                <Form.Label>How often do you play WoW? We're looking to build a community of people that play the game often, not people who exclusively raid log. </Form.Label>
+                <Form.Control name="proclivity_summary" as="textarea" rows={3} />
+              </Form.Group>
+              <Form.Group className="form-group mb-3">
+                <Form.Label>Does Pineapple Belong On Pizza?</Form.Label>
+                <Form.Control name="pizza_question" type="text" />
+              </Form.Group>
+              <Button variant="primary" type="submit" ref={submitButton}>
+                Submit
+              </Button>
 
 
-                </Form>
-                {/* <form action="">
+            </Form>
+            {/* <form action="">
                   <div className="form-group">
                     <label htmlFor="name" className="">Character Name</label>
                     <input type="text" name="name" id="name" />
                   </div>
                 </form> */}
-              </section>
-            </Layout>
-            
-          </div>
-        
+          </section>
+        </Layout>
+
+      </div>
+
     </Fragment>
   );
 };
