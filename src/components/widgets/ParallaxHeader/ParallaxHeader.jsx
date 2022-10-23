@@ -212,9 +212,9 @@ export default () => {
               </span>
             </div>
           </div> */}
+            <h1 style={{ marginBottom: "3%" }}>About Us</h1>
           <div className="intro">
-            <img className="dragon" src={dragon} alt="Computer man" />
-            <h1>About Us</h1>
+            {/* <img className="dragon" src={dragon} alt="Computer man" /> */}
             <h4 style={{ fontWeight: "200", lineHeight: "normal" }}>
               Mist is a cutting-edge guild focused on us-250 progression. Our
               guild prides itself on always improving. We want raiders who want
