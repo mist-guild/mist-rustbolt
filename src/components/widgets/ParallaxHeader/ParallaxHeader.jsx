@@ -212,7 +212,7 @@ export default () => {
               </span>
             </div>
           </div> */}
-            <h1 style={{ marginBottom: "3%" }}>About Us</h1>
+          <h1 style={{ marginBottom: "3%" }}>About Us</h1>
           <div className="intro">
             {/* <img className="dragon" src={dragon} alt="Computer man" /> */}
             <h4 style={{ fontWeight: "200", lineHeight: "normal" }}>
@@ -240,7 +240,7 @@ export default () => {
               <Button
                 click={(e) => {
                   e.preventDefault();
-                  window.location.href='https://www.wowprogress.com/guild/us/illidan/mist';
+                  window.location.href = 'https://www.wowprogress.com/guild/us/illidan/mist';
                 }}
                 hoverType="solid-white-tb"
               >
@@ -249,7 +249,7 @@ export default () => {
               <Button
                 click={(e) => {
                   e.preventDefault();
-                  window.location.href='https://raider.io/guilds/us/illidan/Mist';
+                  window.location.href = 'https://raider.io/guilds/us/illidan/Mist';
                 }}
                 hoverType="solid-white-tb"
               >
@@ -258,7 +258,7 @@ export default () => {
               <Button
                 click={(e) => {
                   e.preventDefault();
-                  window.location.href='https://www.warcraftlogs.com/guild/us/illidan/mist';
+                  window.location.href = 'https://www.warcraftlogs.com/guild/us/illidan/mist';
                 }}
                 hoverType="solid-white-tb"
               >
