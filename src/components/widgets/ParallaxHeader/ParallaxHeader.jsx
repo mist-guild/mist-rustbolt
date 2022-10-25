@@ -216,14 +216,12 @@ export default () => {
           <div className="intro">
             {/* <img className="dragon" src={dragon} alt="Computer man" /> */}
             <h4 style={{ fontWeight: "200", lineHeight: "normal" }}>
-              Mist is a cutting-edge guild focused on us-250 progression. Our
-              guild prides itself on always improving. We want raiders who want
-              to improve their play, improve the raid team, and improve the
+              Mist is a multi-teamed, cutting-edge guild focused on mythic progression. Our
+              guild prides itself on always improving. We seek raiders who want
+              to improve their play, improve their fellow raiders, and improve the
               culture we foster here. We value solid mechanical play over
-              individual parses. If hardcore progression doesn't fit your
-              playstyle but you're still looking for a cutting-edge focused
-              environment to push content, we also run a late-night two night a
-              week group.
+              individual parses. Team Windbridge focuses on Top US 250 progression, while
+              Team Clear Comms focuses on earning CE.
             </h4>
             <div
               className="about-buttons"
@@ -240,7 +238,7 @@ export default () => {
               <Button
                 click={(e) => {
                   e.preventDefault();
-                  window.location.href = 'https://www.wowprogress.com/guild/us/illidan/mist';
+                  window.open('https://www.wowprogress.com/guild/us/illidan/mist');
                 }}
                 hoverType="solid-white-tb"
               >
@@ -249,7 +247,7 @@ export default () => {
               <Button
                 click={(e) => {
                   e.preventDefault();
-                  window.location.href = 'https://raider.io/guilds/us/illidan/Mist';
+                  window.open('https://raider.io/guilds/us/illidan/Mist');
                 }}
                 hoverType="solid-white-tb"
               >
@@ -258,7 +256,7 @@ export default () => {
               <Button
                 click={(e) => {
                   e.preventDefault();
-                  window.location.href = 'https://www.warcraftlogs.com/guild/us/illidan/mist';
+                  window.open('https://www.warcraftlogs.com/guild/us/illidan/mist');
                 }}
                 hoverType="solid-white-tb"
               >
@@ -290,7 +288,7 @@ export default () => {
           id="highlights"
           style={width <= 992 ? { height: "fit-content" } : {}}
         >
-          <h1>Highlights</h1>
+          <h1>Highlights (WIP)</h1>
           <div
             style={{
               display: "flex",
@@ -358,14 +356,14 @@ export default () => {
               >
                 <div className="goals">
                   <p style={{ padding: "2vw" }}>
-                    Mist is a cutting-edge guild focused on us-250 progression.
-                    Our guild prides itself on always improving. We want raiders
-                    who want to improve their play, improve the raid team, and
-                    improve the culture we foster here. We value solid
-                    mechanical play over individual parses. If hardcore
-                    progression doesn't fit your playstyle but you're still
-                    looking for a cutting-edge focused environment to push
-                    content, we also run a late-night two night a week group.
+                    Mist is a CE driven guild that focuses on mechanical gameplay above all else.
+                    All members of Mist are expected to help fellow guildmates and teammates improve; this
+                    is a team effort. We hope to build our teams and guild centered around 3 core principles:
+                    hard work, friendly atmosphere, and ambition to improve. These principles promote growth
+                    amongst our teams and enables consistent performance tier after tier. We have been gaming
+                    together a long time, and we want to continue this history in Dragonflight and beyond! 
+                    Mist is a place where you can improve while still meeting your personal, in-game goals and
+                    great friends.
                   </p>
                   <img src="https://i.ibb.co/wCR7NmS/logo.png" alt="" />
                 </div>
