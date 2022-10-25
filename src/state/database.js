@@ -86,26 +86,26 @@ const database = {
       title: "In-Game Requirements",
       data: [
         {
-          title: "4 MYTHIC PLUS KEYS PER WEEK (UNTIL VERIFIABLE BiS)",
+          title: "MINIMUM OF 4 KEYS UNTIL STATED OTHERWISE",
         },
         {
-          title: "BRING ENOUGH AUGMENT RUNES AND POTS FOR EVERY PULL OF THE NIGHT",
+          title: "BRING ENOUGH AUGMENT RUNES AND PHIALS FOR EACH PULL",
         },
         {
-          title: "PULLS BEGIN PROMPTLY AT 10 PM EST (Team Windbridge)",
+          title: "BE ONLINE 15 MINUTES BEFORE SCHEDULED START TIME FOR TRASH",
         },
         {
-          title: "PULLS BEGIN PROMPTLY AT 11 PM EST (Team Clear Comms)",
+          title: "TEAM WINDBRIDGE BEGINS AT 9:00 PM CST",
         },
         {
-          title: "BE ONLINE 15 MINUTES BEFORE RAID TO CLEAR RAID TRASH",
+          title: "TEAM CLEAR COMMS BEGINS AT 10:00 PM CST",
         },
       ]
     },
     {
       featured: true,
       image: 'https://raw.githubusercontent.com/zakpruitt/mist-website/master/src/assets/df_azure_span.png',
-      title: "MANDATORY ADDONS",
+      title: "Mandatory Addons",
       data: [
         {
           title: "METHOD RAID TOOLS",
@@ -218,7 +218,7 @@ const database = {
       name: "Team Clear Comms",
       short: "Mist's CE Team",
       description:
-        "Click here to find out more about Mist' CE mythic team!",
+        "Click here to find out more about Mist's CE mythic team!",
       icon: 'https://www.pngall.com/wp-content/uploads/11/World-Of-Warcraft-PNG-HD-Image.png',
       id: 1,
       bg: 'https://wallpapercave.com/wp/wp10407651.jpg',
