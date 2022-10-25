@@ -70,7 +70,7 @@ export default ({ data = [] }) => {
       </div>
       <div className='list_back'>
         <p>
-        lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+         The main difference between the two teams is caliber. While both are mythic teams, Windbridge is striving for a regional rank; Clear Comms is striving to earn CE. 
         </p>
       </div>
     </div>
