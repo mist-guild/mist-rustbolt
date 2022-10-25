@@ -53,10 +53,10 @@ export default ({ data = [] }) => {
 
                   <div className="goals">
                     <ul>
-                      <li style={{ marginBottom: '20px' }}>Lorem, ipsum dolor sit amet consectetur </li>
-                      <li style={{ marginBottom: '20px' }}>Lorem, ipsum dolor sit amet consectetur </li>
-                      <li style={{ marginBottom: '20px' }}>Lorem, ipsum dolor sit amet consectetur </li>
-                      <li style={{ marginBottom: '20px' }}>Lorem, ipsum dolor sit amet consectetur </li>
+                    <li style={{ marginBottom: '20px' }}>Achieve CE every tier </li>
+                      <li style={{ marginBottom: '20px' }}>Improve our team each tier </li>
+                      <li style={{ marginBottom: '20px' }}>Foster a friendly yet competetive environment </li>
+                      <li style={{ marginBottom: '20px' }}>Remain a competetive mythic team </li>
                     </ul>
                     <img src="https://i.ibb.co/wCR7NmS/logo.png" alt="" />
                   </div>
