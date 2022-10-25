@@ -19,12 +19,12 @@ export default () => {
         <div className={styles.logo_area}>
           <Logo dark />
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime debitis numquam recusandae inventore mollitia sapiente doloremque quas quam doloribus pariatur.
+            Mist Guild © 2022. All rights reserved. <br />
           </p>
           <div className={styles.social}>
-            <a href="#"><i className="lab la-twitter" /></a>
+            <a href="https://twitter.com/MistGuild"><i className="lab la-twitter" /></a>
             <a href="#"><i className="lab la-youtube" /></a>
-            <a href="#"><i className="lab la-discord" /></a>
+            <a href="https://discord.gg/bBsSgK24Kf"><i className="lab la-discord" /></a>
           </div>
         </div>
 
@@ -53,7 +53,7 @@ export default () => {
         </div>
 
         <div className={styles.subscribe}>
-          <h4>Newsletter</h4>
+          <h4>Newsletter (NYI)</h4>
           <Subscribe />
           <p>
             Get our latest news and updates. Subscribe to our newsletter.

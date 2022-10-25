@@ -106,7 +106,7 @@ export default ({ children, label, image, user, layout = "grid", discord }) => {
           <span className="inner-card">
             <span className="user-details">
               <span className="top-section">
-                <span className="flip">Flip</span>
+                {/* <span className="flip">Flip</span> */}
               </span>
               <span className="bottom-section">
                 <span className="name">{item.name}</span>

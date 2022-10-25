@@ -22,7 +22,7 @@ export default (props) => {
               <a href="#" style={{color:'rgba(85,26,139,1)', float:'unset', fontSize:'48px', width:'fit-content', padding:'10px 5px', marginTop:"1%"}}> <img src="https://i.ibb.co/nfCw7NX/Asset-1.png" alt="" width='40px'/><div style={{fontSize:'15px', letterSpacing:'unset', fontWeight:'unset', lineHeight:'unset', color:'#9E9E9E', marginTop:'5px'}}>Log</div></a>
             </div>
           </div>
-          <div className="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
+          {/* <div className="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
             <div className="one-third">
               <div className="stat">#{props.world}</div>
               <div className="stat-value">World</div>
@@ -37,7 +37,7 @@ export default (props) => {
               <div className="stat">#{props.realm}</div>
               <div className="stat-value">Realm</div>
             </div>
-          </div>
+          </div> */}
         </div>
         <span className="glare"></span>
       </span>
