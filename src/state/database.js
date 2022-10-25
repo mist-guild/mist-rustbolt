@@ -387,149 +387,126 @@ const database = {
   members2: [
       // shamans
       {
-        user: 'Rhazkala',
-        healer: true,
+        user: 'Enzyte',
+        officer: true,
+        mdps: true,
+        discord: 'Enzyte#2934',
+        about: 'Very based lead.',
+      },
+      {
+        user: 'Spuggleworth',
+        rdps: true,
         about: 'Very based lead.',
       },
       // mage
       {
-        user: 'Zinging',
+        user: 'Tortz',
         rdps: true,
         about: 'Very based lead.',
       },
       {
-        user: 'Hoogita',
+        user: 'Kholio',
         rdps: true,
         about: 'Very based lead.',
       },
       // hunter
       {
-        user: 'Billygates',
-        officer: true,
-        rdps: true,
-        discord: 'Moonvest#0388',
-        about: 'Very based lead.',
-      },
-      {
-        user: 'Äni',
-        officer: true,
-        rdps: true,
-        discord: 'Anisro#8121',
-        about: 'Very based lead.',
-      },
-      {
-        user: 'Ducksyan',
+        user: 'Dyteo',
         rdps: true,
         about: 'Very based lead.',
       },
       {
-        user: 'Zensy',
-        rdps: true,
+        user: 'Icantsurvive',
+        mdps: true,
         about: 'Very based lead.',
       },
       // druid
       {
-        user: 'Cuppidrood',
+        user: 'Tucksdru',
         officer: true,
-        rdps: true,
-        discord: 'Cuppie#9152',
+        healer: true,
+        discord: 'Tucks#7719',
         about: 'Very based lead.',
       },
       {
-        user: 'Trumbone',
-        rdps: true,
-        about: 'Very based lead.',
-      },
-      {
-        user: 'Apchicken',
+        user: 'Lianhai',
         rdps: true,
         about: 'Very based lead.',
       },
       // priests
       {
-        user: 'Keyonna',
-        officer: true,
-        healer: true,
-        discord: 'Keyona#8151',
-        about: 'Very based lead.',
-      },
-      {
-        user: 'Piousbob',
-        officer: true,
-        rdps: true,
-        discord: 'BKrenz#4028',
-        about: 'Very based lead.',
-      },
-      {
-        user: 'Nympheas',
+        user: 'Hoobz',
         healer: true,
         about: 'Very based lead.',
       },
       {
-        user: 'Zamyrha',
-        rdps: true,
+        user: 'Holeedeez',
+        healer: true,
+        about: 'Very based lead.',
+      },
+      {
+        user: 'Archora',
+        healer: true,
         about: 'Very based lead.',
       },
       // monks
       {
-        user: 'Stoppas',
-        officer: true,
-        tank: true,
-        discord: 'tripod#6224',
-        about: 'Very based lead.',
-      },
-      {
-        user: 'Jangoz',
+        user: 'Taekwonyolo',
         healer: true,
         about: 'Very based lead.',
       },
       // rogues
       {
-        user: 'Lonsneakz',
+        user: 'Bossxstabbyx',
+        officer: true,
         mdps: true,
-        about: 'Very based lead.',
-      },
-      {
-        user: 'Malicarie',
-        mdps: true,
+        discord: 'BOSSDOGGxXx#6044',
         about: 'Very based lead.',
       },
       // paladin
       {
-        user: 'Saltedpal',
-        officer: true,
+        user: 'Massaslice',
         healer: true,
-        discord: 'SaltedPork#6429',
+        about: 'Very based lead.',
+      },
+      {
+        user: 'Ragnòn',
+        officer: true,
+        tank: true,
+        discord: 'Ragnon#8407',
         about: 'Very based lead.',
       },
       // warlock
       {
-        user: 'Cbreez',
-        rdps: true,
-        about: 'Very based lead.',
-      },
-      {
-        user: 'Dallasx',
+        user: 'Scrúblock',
         rdps: true,
         about: 'Very based lead.',
       },
       // dk
       {
-        user: 'Mysticplay',
+        user: 'Decentrik',
+        tank: true,
+        about: 'Very based lead.',
+      },
+      {
+        user: 'Shreffi',
+        officer: true,
         mdps: true,
+        discord: 'shreffy#1143',
         about: 'Very based lead.',
       },
       // dh
       {
-        user: 'Carande',
+        user: 'Foils',
         mdps: true,
         about: 'Very based lead.',
       },
+      // warrior
       {
-        user: 'Nicaras',
+        user: 'Köenigsegg',
         mdps: true,
         about: 'Very based lead.',
-      },
+      }
   ],
 };
 
