@@ -177,7 +177,7 @@ export default ({ data = [] }) => {
                 <Form.Control name="warcraftlogs_link" type="url" required />
               </Form.Group>
               <Form.Group className="form-group mb-3" controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Tell Us About Yourself!</Form.Label>
+                <Form.Label>Tell us about yourself in real life!</Form.Label>
                 <Form.Control maxlength="1020" name="real_life_summary" as="textarea" rows={3} required />
               </Form.Group>
               <Form.Group className="form-group mb-3" controlId="exampleForm.ControlTextarea1">
