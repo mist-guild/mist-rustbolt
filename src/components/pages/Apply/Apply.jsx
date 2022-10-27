@@ -177,19 +177,19 @@ export default ({ data = [] }) => {
                 <Form.Control name="warcraftlogs_link" type="url" required />
               </Form.Group>
               <Form.Group className="form-group mb-3" controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Tell us about yourself in real life!</Form.Label>
+                <Form.Label>Tell us about yourself in real life! (1020 characters)</Form.Label>
                 <Form.Control maxlength="1020" name="real_life_summary" as="textarea" rows={3} required />
               </Form.Group>
               <Form.Group className="form-group mb-3" controlId="exampleForm.ControlTextarea1">
-                <Form.Label>What experience, skill, and attitude will you bring to the guild?</Form.Label>
+                <Form.Label>What experience, skill, and attitude will you bring to the guild? (1020 characters)</Form.Label>
                 <Form.Control maxlength="1020" name="skills_summary" as="textarea" rows={3} required />
               </Form.Group>
               <Form.Group className="form-group mb-3" controlId="exampleForm.ControlTextarea1">
-                <Form.Label>How often do you play WoW? We're looking to build a community of people that play the game often, not people who exclusively raid log. </Form.Label>
+                <Form.Label>How often do you play WoW? We're looking to build a community of people that play the game often, not people who exclusively raid log. (1020 characters)</Form.Label>
                 <Form.Control maxlength="1020" name="proclivity_summary" as="textarea" rows={3} required />
               </Form.Group>
               <Form.Group className="form-group mb-3">
-                <Form.Label>Does Pineapple Belong On Pizza?</Form.Label>
+                <Form.Label>Does Pineapple Belong On Pizza? (1020 characters)</Form.Label>
                 <Form.Control maxlength="1020" name="pizza_question" type="text" required />
               </Form.Group>
               <Button variant="primary" type="submit" ref={submitButton}>
