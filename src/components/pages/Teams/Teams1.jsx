@@ -110,7 +110,6 @@ export default ({ data = [] }) => {
               <CastleCard name={item[1].name} bg={item[1].bg} icon={item[1].icon} description={item[1].description} progress="11/11 M" world="1" region="1" realm="1" />
               <CastleCard name={item[2].name} bg={item[2].bg} icon={item[2].icon} description={item[2].description} progress="10/10 M" world="1" region="1" realm="1" />
               <CastleCard name={item[3].name} bg={item[3].bg} icon={item[3].icon} description={item[3].description} progress="10/10 M" world="1" region="1" realm="1" />
-              <CastleCard name={item[4].name} bg={item[4].bg} icon={item[4].icon} description={item[4].description} progress="12/12 M" world="1" region="1" realm="1" />
             </ScrollContainer>
           </Layout>
         </section>

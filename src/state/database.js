@@ -186,16 +186,10 @@ const database = {
       bg: 'https://wow.zamimg.com/uploads/guide/seo/10246.jpg?1588896674',
       link: "https://www.youtube.com/watch?v=wawBZZvizLQ&ab_channel=DonkeystormGaming",
     },
-    {
-      name: "Ny'alotha",
-      bg: 'https://render.worldofwarcraft.com/us/zones/nyalotha-the-waking-city-small.jpg',
-      link: "https://www.youtube.com/watch?v=wawBZZvizLQ&ab_channel=DonkeystormGaming",
-    },
   ],
   teams: [
     {
       name: "Team Windbridge",
-      short: "Mist's Top 250 US Team",
       description:
         "Click here to find out more about Mist's top 250 mythic team!",
       icon: 'https://i.ibb.co/GsdyVtt/sire-Denathrius-Big.png',
@@ -216,7 +210,6 @@ const database = {
     },
     {
       name: "Team Clear Comms",
-      short: "Mist's CE Team",
       description:
         "Click here to find out more about Mist's CE mythic team!",
       icon: 'https://www.pngall.com/wp-content/uploads/11/World-Of-Warcraft-PNG-HD-Image.png',
