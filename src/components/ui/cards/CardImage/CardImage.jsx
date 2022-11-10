@@ -124,7 +124,8 @@ export default ({ children, label, image, user, layout = "grid", discord }) => {
                                       item.class === 'Shaman' ? '#0070DE' :
                                         item.class === 'Warlock' ? '#9482C9' :
                                           item.class === 'Warrior' ? '#C79C6E' :
-                                            'white'
+                                            item.class === 'Evoker' ? '#33937F' :
+                                              'white'
                 }}>{item.class}</span></span>
                 {discord ?
                   <div className="flip-button buttons">
