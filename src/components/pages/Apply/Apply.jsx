@@ -158,7 +158,7 @@ export default ({ data = [] }) => {
                 </Form.Select>
               </Form.Group>
               <Form.Group className="form-group mb-3">
-                <Form.Label>What Raid Team Are You Applying To?</Form.Label>
+                <Form.Label>Team Preference</Form.Label>
                 <Form.Select name="team_choice" aria-label="Default select example" required>
                   <option value="Windbridge">Windbridge</option>
                   <option value="Clear Comms">Clear Comms</option>
