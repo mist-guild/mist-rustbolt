@@ -16,7 +16,6 @@ export default () => {
           <div style={{margin:'0'}}>
             <ParallaxHeader />
           </div>
-          
     </Fragment>
   );
 };

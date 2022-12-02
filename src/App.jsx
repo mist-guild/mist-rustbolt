@@ -11,6 +11,7 @@ import { Header, Sidebar, Footer } from "./components/layouts";
 import { ModalForm } from "./components/ui";
 import { Spinner } from "./components/elements";
 import { useCustomState } from "./state/state";
+import Confirm from "./components/pages/Confirm/Confirm";
 
 export default () => {
   const [state, actions] = useCustomState();
@@ -30,6 +31,7 @@ export default () => {
         <Switch>
           <Route path="/home" exact component={Home} />
           <Route path="/apply" exact component={Apply} />
+          <Route path="/confirm" exact component={Confirm} />
           <Route path="/teams/windbridge" exact component={Teams1} />
           <Route path="/teams/clear-comms" exact component={Teams2} />
           <Redirect to="/home" />
