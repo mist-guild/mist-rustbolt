@@ -26,8 +26,8 @@ export default () => {
               <div className={styles.slide}>
                 <div className={styles.intro}>
                   <img src={tick} alt="" />
-                  <h1>Your Application has been submitted successfully</h1>
-                  <p>You should hear back in 2-3 days or less via Discord</p>
+                  <h1>Your application has been submitted successfully!</h1>
+                  <p>You should hear back in 2-3 days or less via Discord.</p>
                   <Button to={"/home"} hoverType="solid-white-tb">
                     Back to Home
                   </Button>
